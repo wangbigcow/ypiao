@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>【强济网】</title>
+    <link rel="stylesheet" href="../public/css/common.css">   
+    <style>
+        ul{
+            list-style: none;
+        }
+        .head{
+            width:100%;
+            height:150px;
+            background-color:#eee;
+
+        }
+        .content{
+            width:1200px;
+            margin:20px auto;
+            position: relative;
+            text-align: center;
+        }
+        .detail{
+            
+            border:1px solid #dedede;
+            border-top-color:#d5d5d5;
+            background:right 0 repeat-y #fff;
+            position: relative;
+            display: flex;
+            justify-content:space-around;
+            padding-bottom:1px;
+            
+        }
+        .item_cover{
+            width:410px;
+            position:relative;
+            float:left;
+            border:1px solid #dedede ;
+        }
+        .view_bd{
+            width:380px;
+            height:380px;
+            position:relative;
+            margin:20px auto 0;
+            position:relative;
+        }
+        .view{
+            width:380px;
+            height:380px;
+            position: absolute;
+            top:0;
+            left:0;
+            z-index:2;
+            border:0;
+        }
+        .view_thumbs{
+            width:410px;
+            height:100px;
+        }
+        .view_thumbs ul{
+            height:60px;
+            margin:0 auto;
+            padding:15px 0;
+            overflow: hidden;
+        }
+        .view_thumbs li{
+            height:50px;
+            width: 50px;
+            border:1px solid #ddd;
+            margin:0 4px 50px;
+            cursor: pointer;
+            padding: 2px;
+            position: relative;
+            float: left;
+        }
+        /* .view_thumbs li:hover{
+            border:1px solid #b0352f;
+        } */
+        .view_thumbs li.current{
+            border:1px solid #b0352f;
+            border-color: #b0352f;
+        }
+        .view_thumbs li img{
+            height:50px;
+            width: 50px;
+            position: absolute;
+            top:0;
+            left:0;
+
+        }
+        .view_thumbs li i{
+            display: none;
+            font-size:10px;
+            color: #b0352f;
+            position: absolute;
+            top:-13px;
+            left:20px;
+            z-index: 5;
+        }
+        .view_thumbs li i.on{
+            display: block;
+        }
+        .item_box{
+            
+            position: relative;
+
+            min-height: 455px;
+            width: 580px;
+
+            border-left: 1px solid #d5d5d5;
+            padding-bottom: 32px;
+        }
+        .item_detail{
+            padding-left: 0px;
+            padding-bottom: 0px;
+            position: relative;
+        }
+        .item_detail .product_name{
+            height:50px;
+            line-height:50px;
+            padding-left: 15px;
+            border-bottom:1px solid #ddd;
+        }
+        .item_detail .product_name h1{
+            font-size:16px;
+        }
+        ul.pri{
+            height: 84px;
+            padding:15px 20px 4px;  
+            margin:0 -4px -1px 10px;
+            position: relative;
+            z-index: 9;
+            font-family: \5FAE\8F6F\96C5\9ED1, \9ED1\4F53;
+            background: right bottom #b0352f;  
+        }
+        ul.pri li {
+            color: #ffffff;
+            float: left;
+            font-size: 14px;
+        }
+        ul.pri li.t1{
+            line-height:14px;
+            width:65px;
+        }
+        ul.pri li.t2{
+            font-size:30px;
+            height:45px;
+            padding-right:10px;
+            line-height:30px;
+            overflow: hidden;
+        }
+        ul.pri li.t3{
+            width: 116px;
+            clear: both;
+            padding-top: 4px;
+            padding-left: 65px;
+        }
+        ul.property{
+            position: relative;
+            height:54px;
+            line-height: 24px;
+            font-size:15px;
+        }
+        ul.property li{
+            height:24px;
+            line-height:24px;
+            position: relative;
+            
+        }
+        ul.property li .lbl{
+            display: inline-block;
+            line-height: 24px;
+            margin: 0;
+            width:80px;
+            color:#888888;
+            padding-left: 20px;
+
+            float: left;
+        }
+        ul.property li span.lbl2{
+            height:24px;
+            line-height:24px;
+
+            float: left;
+        }
+        ul.property li span.lbl2>span{
+            float: left;
+            height:24px;
+            line-height:24px;
+            
+        } 
+        ul.property li span.lbl2  a span{
+            height:24px;
+            line-height:24px;   
+        }
+        ul.property .ping_star{
+            height: 21px;
+            font-size: 15px;
+
+        }
+        ul.property .ping_star i{
+            display: inline-block;
+            padding:0;
+            height: 15px;
+            font-size: 15px;
+            
+        }
+        /*设置动画*/  
+        @keyframes spin{   
+            0%{   
+                transform:rotateY(0deg)   
+            }   
+            100%{   
+                transform:rotateY(360deg)   
+            }   
+        }
+        span.SetPoints{
+            height:24px;
+            line-height:24px;
+            float: left;
+            padding-left: 20px; color:#999;
+        }
+        span.SetPoints i{
+            margin:0px;   
+        }
+       
+        .SetPoints .teacur{
+            animation: spin 2s linear infinite;
+        }
+        ul.property .orange{
+            color:#b0352f;
+            font-style: normal;
+        }
+        .tobuy_box{
+            padding-top:2px;
+            height:120px;
+        }
+        .tobuy_box .lbl{
+            font-size:16px;
+            color:#888888;
+        }
+        .tobuy_box .skunum_li {
+            margin-bottom: 20px;
+            height: 32px;
+            line-height: 32px;
+            margin-left:20px;
+        }
+        .tobuy_box .skunum_li .lbl{
+            float:left;
+            height: 21px;
+            line-height: 21px;
+            margin-top:6px;
+            font-size:16px;
+        }
+        .skunum_li .skunum{
+            float: left;
+            height: 32px;
+            font-size: 0;
+            overflow: hidden;
+            padding-left: 5px;
+        }
+        .skunum span {
+            float: left;
+            display: block;
+
+            width: 28px;
+            height: 30px;
+            line-height: 26px;
+            text-align: center;
+            font-size: 20px;
+
+            border: 1px solid #ccc;
+            background-color: #eee;
+            color: #777;
+            cursor: pointer;
+    
+            overflow: hidden;            
+        }
+        .skunum input {
+            float: left;
+            display: block;
+
+            width: 66px;
+            height: 14px;
+            
+            line-height: 14px;
+            text-align: center;
+
+            font-size: 14px;
+
+            border: none;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            background-color: #fff;
+
+            padding: 8px 0;
+        }
+        .add_cart_li {
+            height: 45px;
+            margin: 0px 0px 20px 20px;
+            
+        }
+        .add_cart_li a{
+            
+            width: 170px;
+            height: 41x;
+            line-height: 41px;
+            text-align: center;
+            border: 1px #b0352f solid;
+            display: inline-block;
+            font-size: 16px;
+            
+        }
+        .add_cart_li a.buy_btn_buy{
+            background-color: #b0352f;
+            color:#fff; 
+            float: left;
+        }
+        .add_cart_li a.buy_btn_add{
+            background-color: #ffe2e1;
+            color:#b0352f; 
+            float: left;
+            margin-left: 10px
+        }
+        .privileges {
+            position: absolute;
+            padding-bottom: 15px;
+            padding-left: 12px;
+            bottom: 1px;
+        }
+        .privileges ul{
+            width:100%;
+            position:relative;
+        }
+        .privileges ul li{
+           
+            float: left;
+            margin:0 5px;
+            color:#888888;
+            font-size:14px;
+        }
+        /* 查看 更多 */
+        .seemore_items{
+            /* position:absolute;
+            right:0; */
+            position: relative;
+            width:205px;
+            padding:15px 0;
+            background-color:#eee;
+        }
+        .seemore_items h3{
+            position: relative;
+            width:140px;
+            font-size:14px;
+           margin: 0 auto 10px;
+           color:#999;
+        }
+        .seemore_items h3 .refresh{
+            font-size:14px;
+            color:#999;
+            margin-left:55px;
+        }
+        .seemore_items .bd{
+            position: relative;
+            width:140px;
+           
+           margin: 0 auto;
+           
+        }
+        .seemore_items .bd ul li{
+            position: relative;
+            width:140px;
+            height:140px;
+            
+            font-size:14px;
+            margin-bottom: 10px;
+            color:#999;
+        }
+        .seemore_items .bd ul li a{
+            display: block;
+            position: relative;
+            width:140px;
+            height:140px;
+
+        }
+        .seemore_items .bd ul li a img{
+            display: block;
+            
+            width:140px;
+            height:140px;
+
+        }
+        .seemore_items .bd ul li a p{
+            position: absolute;
+            width:93%;
+            height:30px;
+            line-height:30px;
+            font-size: 14px;
+            padding-left: 10px;
+            bottom:0px;
+            color:#605046;
+            background-color:rgba(255,255,255,0.8);
+           
+        }
+        
+        
+        
+        .seemore_items .bd ul li:hover a p{
+            color:#b0352f;
+        }
+
+        .seemore_items::after{
+            content:'';
+            display: block;
+            clear:both;
+        }
+
+        /* detail_page  */
+        .detail_page{
+            width:100%;
+        }
+        .detail_main{
+            width:1200px;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+        }
+        .detail_left{
+            
+            width:81%;
+            background-color:#fff;
+            border: 1px solid #f3f3f3;
+            
+            margin-top: 15px;
+        }
+        .detail_left .tabs_bar_warp{
+            
+            height:44px;
+            background-color: #f3f3f3;
+            border:1px solid #ccc;
+        }
+        .detail_left .tabs_bar_warp .tabs_bar{
+            height:44px;
+        }
+        .tabs_bar .buy_fr{
+            width:44px;
+            background-color:#f3f3f3;
+            z-index:999;
+        }
+        
+        .tabs_bar .buy_fr  del{
+            margin-right: 10px;
+            font-family: Arial
+        }
+        .tabs_bar ul{
+            width:100%;
+        }
+        .tabs_bar ul li{
+            display: block;
+            z-index:999;
+            height:44px;
+            line-height:44px;
+            float:left; 
+        }
+        .tabs_bar ul li a {
+            border-right: 1px solid #ccc;
+            padding: 0 35px;
+            display: block;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .tabs_bar ul li.current a{
+            color: #b0352f;
+            text-decoration: none;
+            background: #fff;
+            border-bottom: 1px solid #fff;
+        }
+        .detail_left .detail_part{
+            background-color: #fff;
+            padding:20px;
+            border:1px solid #ccc;
+            border-top: none;
+        }
+        .detail_part .sectionbox{
+            margin-bottom: 30px;
+        }
+        .part_box{
+            margin-bottom:20px;
+        }
+        .detail_title{
+            height: 35px;
+            border-bottom: 1px #d29d9b solid;
+            margin-bottom: 30px;
+        }
+        .detail_title p {
+            position: relative;
+            float: left;
+            left: 50%;
+            clear: both;
+        }
+        .detail_title p code {
+            padding: 5px 30px;
+            display: block;
+            background: #FFFFFF;
+            text-align: center;
+
+            color: #d37b77;
+            font: 24px/2.2 "Microsoft YaHei",Tahoma,Helvetica,Arial,simsun; 
+            position: relative;
+            left: -50%; 
+            
+        }
+        .detail_right{
+            width:17%;
+            height: 1200px;
+            text-align: center;
+            background-color:#fff;
+            margin-top: 15px;
+            
+            border: 1px solid #ccc;
+        }
+        .right_box .hd {
+            
+            height: 44px;
+            line-height: 44px;
+
+            overflow: hidden;
+            font-size: 14px;
+            padding-left: 30px;
+
+            border-bottom: 1px solid #ccc;
+            background:url(./img/h3-titbg.png) 15px 14px no-repeat #f3f3f3;
+        }
+        .right_box .bd {
+            padding: 0 14px;
+        }
+        .right_box .bd ul li{
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 10px;
+            margin-bottom: -1px;
+        }
+        .right_box .bd ul li p.img {
+            padding-top: 10px;
+            text-align: center;
+        }
+        
+        .right_box .bd ul li p.img img{
+            width:120px;
+            height:120px;
+        }
+        .right_box .bd ul li p.name {
+            font-size:12px;
+            color:#608090;
+            text-align: justify;
+        }
+        .right_box .bd ul li p.name:hover a{
+            font-size:12px;
+            color:#b0352f;
+            text-align: justify;
+        }
+        .right_box .bd ul li p.price {
+            border:none;
+            text-align: justify;
+        }
+        .right_box .bd ul li p.price b{
+            color:#b0352f;
+        } 
+    </style>
+</head>
+<body>
+    <header class="head"></header>
+    <div class="content">
+        <div class="detail ceil">
+            <div class="item_cover" id="item_cover">
+                <div class="view_bd">
+                    <img  class="view" src="./img/1.jpeg" alt="高级岩茶 武夷山原产地大红袍 2号160g" title="高级岩茶 武夷山原产地大红袍 2号160g" style="z-index:6;">
+                    <img  class="view" src="./img/2.jpeg" alt="高级岩茶 武夷山原产地大红袍 2号160g" title="高级岩茶 武夷山原产地大红袍 2号160g">
+                    <img  class="view" src="./img/3.jpeg" alt="高级岩茶 武夷山原产地大红袍 2号160g" title="高级岩茶 武夷山原产地大红袍 2号160g">
+                    <img  class="view" src="./img/4.jpeg" alt="高级岩茶 武夷山原产地大红袍 2号160g" title="高级岩茶 武夷山原产地大红袍 2号160g">
+                    <img  class="view" src="./img/5.jpeg" alt="高级岩茶 武夷山原产地大红袍 2号160g" title="高级岩茶 武夷山原产地大红袍 2号160g">
+                </div>
+                <div class="view_thumbs">
+                    <ul class="cle"  style="width:384px;">
+                        <li class="current">
+                            <i class="iconfont arrow on">&#xe608;</i>
+                            <img src="./img/1.jpeg" alt="高级岩茶 武夷山原产地大红袍 2号160g" title="高级岩茶 武夷山原产地大红袍 2号160g" data-va="0"> 
+                        </li>
+                        <li>
+                            <i class="iconfont arrow">&#xe608;</i>
+                            <img src="./img/2.jpeg" alt="高级岩茶 武夷山原产地大红袍 2号160g" title="高级岩茶 武夷山原产地大红袍 2号160g" data-va="1"> 
+                        </li>
+                        <li>
+                            <i class="iconfont arrow">&#xe608;</i>
+                            <img src="./img/3.jpeg" alt="高级岩茶 武夷山原产地大红袍 2号160g" title="高级岩茶 武夷山原产地大红袍 2号160g" data-va="2"> 
+                        </li>
+                        <li>
+                            <i class="iconfont arrow">&#xe608;</i>
+                            <img src="./img/4.jpeg" alt="高级岩茶 武夷山原产地大红袍 2号160g" title="高级岩茶 武夷山原产地大红袍 2号160g" data-va="3"> 
+                        </li>
+                        <li>
+                            <i class="iconfont arrow">&#xe608;</i>
+                            <img src="./img/5.jpeg" alt="高级岩茶 武夷山原产地大红袍 2号160g" title="高级岩茶 武夷山原产地大红袍 2号160g" data-va="4"> 
+                        </li>
+                        
+                    </ul>
+
+                </div>
+
+            </div>
+            <div class="item_box">
+                    <dl class="item_detail">
+                        <dt class="product_name">
+                            <h1>高级岩茶 武夷山原产地大红袍 2号160g</h1>
+                        </dt>
+                        <dt class="item_info">
+                            <ul class="pri" >
+                                <li class="t1" id="product_price_tag">茶七价</li>
+                                <li class="t2">
+                                    <strong id="salePrice">
+                                     ¥<span class="price-val-dyn-upd">99.00</span>
+                                    </strong>
+                                </li>
+                                <li class="t3">市场价
+                                        <del class="oldprice-val-for-dyn-upd">158.00</del>
+                                </li>
+
+                            </ul >
+                            <ul class="property cle">
+                                    <li>
+                                        <span class="lbl">顾客评分：</span>
+                                        <span class="lbl2">
+                                            <span class="ping_star">
+                                                <i class="iconfont good" style="color:#b0352f;">&#xe62e;&#xe62e;&#xe623;</i>
+                                                <i class="iconfont nogood" style="color:#ddd;">&#xe62e;&#xe62e;</i>
+                                            </span>
+                                            <span class="setReviewPoint" >4.9分</span> 
+                                            <a href="#part_comment" id="s_comment" style="color:#999; display: inline-block "><span>(已有<span class="setReviewNumber" style="color:#999; display: inline-block; clear:both;">30</span>人评价）</span></a>
+                                            
+                                        </span>
+                                    </li>
+                                    
+                                    <li>
+                                        <span  class="SetPoints">
+                                            <i style="float: left; padding-top:3px; ">
+                                                <img src="./img/teacur.png" class="teacur">
+                                            </i> 
+                                                购买立返
+                                            <em class="orange">24</em>茶币
+                                        </span>
+                                    </li>
+                             </ul>
+                             <ul class="info2 cle" style="display: none;">
+                                    <li class="t1">
+                                        <p class="left"> 品级：</p>
+                                        <p>登堂入室</p>
+                                    </li>
+                                     <li class="t3">
+                                        <p class="left"> 产地：</p>
+                                        <p>浙江</p>
+                                    </li>
+                                    <li class="t4">
+                                        <p class="left"> 保质期：</p>
+                                        <p>18个月</p>
+                                    </li>
+                             </ul>
+                            <div class="attributes">
+                                    <ul class="sku_box"></ul>
+                            </div>
+                            <ul class="tobuy_box">
+                                <li class="skunum_li cle">
+                                        <span class="lbl">数　　量：</span>
+                                        <div class="skunum" id="s_num">
+                                            <span class="num_op minus"  title="减少1个数量" onclick="setAmount.change_count(-1)">
+                                                <i class="iconfont">-</i>
+                                            </span>
+                                            <input id="quantity" min="1" name="Quantity"  type="text" value="1" onblur="setAmount.load()" onkeyup="setAmount.modify()"><!-- onblur="setAmount.load('#Quantity')" onkeyup="setAmount.modify('#Quantity')"--> -->
+                                            <span class="num_op add" title="增加1个数量" onclick="setAmount.change_count(1)">
+                                                <i class="iconfont">+</i>
+                                            </span>
+                                        </div>
+                                        <span class="lbl">件</span>
+                                    </li>
+                                    <li class="add_cart_li">
+                                        <a href="javascript:;" id="buy_btn" class="buy_btn_buy" value="2305">立即购买</a>
+                                        <a href="javascript:;" id="add_cart" class="buy_btn_add" value="2305">加入购物车</a>
+                                    </li>
+                            </ul>
+                        </dt>
+                    </dl>
+                    <div class="privileges cle">
+                        <ul class="cle">
+                            <li><i class="iconfont">&#xe674;</i>48小时发货</li>
+                            <li><i class="iconfont">&#xe605;</i>7天无理由退货</li>
+                            <li>
+                                    <!--分享用户的ID-->
+                                    <div class="bdsharebuttonbox bdshare-button-style0-16" style="margin-top:-5px;" data-id="0" data-bd-bind="1568188108118">
+                                        <a href="#" class="bds_more" data-cmd="more"></a>
+                                        <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                                        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                                        <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+                                        <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+                                        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                                    </div>
+                                    
+                                </li>
+                        </ul>
+                    </div>
+            
+            </div>
+            <div class="seemore_items" id="seemore_items">
+                <h3>
+                    看了又看
+                    <a href="javascript:seeagain();" class="refresh" title="换一组">
+                        <i class="iconfont">&#xe618;</i>
+                    </a>
+                </h3>
+                <div class="bd">
+                    <ul>
+                        <li>
+                            <a href="/item/3796.html" target="_blank" title="匠人茶-管超武-正岩花香肉桂96g">
+                                <img width="150" height="150" alt="匠人茶-管超武-正岩花香肉桂96g" src="http://img.tea7.com/0125735_0.png?x-oss-process=image/resize,w_300" title="匠人茶-管超武-正岩花香肉桂96g">
+                                <p class="price">¥168</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/item/2373.html" target="_blank" title="茶壶 紫砂壶 如意莲花壶">
+                                <img width="150" height="150" alt="茶壶 紫砂壶 如意莲花壶" src="http://img.tea7.com/0013255_0.jpeg?x-oss-process=image/resize,w_300" title="茶壶 紫砂壶 如意莲花壶">
+                                <p class="price">¥588</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/item/3437.html" target="_blank" title="茶壶-紫砂壶-周盘壶200cc">
+                                <img width="150" height="150" alt="茶壶-紫砂壶-周盘壶200cc" src="http://img.tea7.com/0110505_0.jpeg?x-oss-process=image/resize,w_300" title="茶壶-紫砂壶-周盘壶200cc">
+                                <p class="price">¥558</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="detail_page">
+            <div class="detail_main cle">
+                <div class="detail_left">
+                    <div class="tabs_bar_warp">
+                        <div class="tabs_bar" id="tabs_bar">
+                            <div class="buy_fr" style="display: none;">
+                                <span>
+                                    <a class="buy_btn_buy" href="javascript:;" onclick="AjaxCart.addproducttocart('/AddProductVariantToCheckout/2305/0', '#product-details-form'); return false;"><i class="iconfont">ƞ</i> 立即购买</a>
+                                </span>
+                                <del class="oldprice-val-for-dyn-upd">¥158</del>
+                                <strong id="salePrice">¥<span class="price-val-for-dyn-upd">99.00</span> </strong>
+                            </div>
+                            <ul>
+                                <li class="current">
+                                    <a href="#part_detail">商品详情</a>
+                                </li>
+                                <li>
+                                    <a href="#part_comment_main">评价详情(<em class="setReviewNumber">30</em>)</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="detail_part">
+                        <div class="sectionbox" id="part_detail">
+                            <div class="part_box">
+                                <div class="detail_title">
+                                    <p><code>产品参数</code></p>
+                                </div>
+                                <div class="part_bd">
+                                    <input id="hidPyramid" value="0" type="hidden">
+                                    <table class="item_canshu">
+                                        <tbody>
+                                            <tr>
+                                                <td class="op">
+                                                    <table>
+                                                    </table>
+                                                </td>
+                                                <td class="pic">
+                                                    <img src="http://img.tea7.com/0012935_0.jpeg?x-oss-process=image/resize,w_300" width="200" height="200" alt="">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+    
+                            <div class="part_box">
+                                <div class="detail_title">
+                                    <p><code>商品介绍</code></p>
+                                </div>
+                                <div class="part_bd">
+                                                                                                                <p><img src="http://imgcon.tea7.com/6363745754641268689433936.jpg" style="" title="茶-详情页2号_01.jpg"><img src="http://imgcon.tea7.com/6363745754461578457618542.jpg" style="" title="茶-详情页2号_02.jpg"><img src="http://imgcon.tea7.com/6363745754591267382347850.jpg" style="" title="茶-详情页2号_03.jpg"><img src="http://imgcon.tea7.com/6363745754527204781219487.jpg" style="" title="茶-详情页2号_04.jpg"><img src="http://imgcon.tea7.com/6363745754553769091533285.jpg" style="" title="茶-详情页2号_05.jpg"><img src="http://imgcon.tea7.com/6363745754847521542563127.jpg" style="" title="茶-详情页2号_06.jpg"><img src="http://imgcon.tea7.com/6363745754744395013849445.jpg" style="" title="茶-详情页2号_07.jpg"><img src="http://imgcon.tea7.com/6363745754686582623505930.jpg" style="" title="茶-详情页2号_08.jpg"><img src="http://imgcon.tea7.com/6363745754711583887048973.jpg" style="" title="茶-详情页2号_09.jpg"><img src="http://imgcon.tea7.com/6363745754788145835448857.jpg" style="" title="茶-详情页2号_10.jpg"><img src="http://imgcon.tea7.com/6363745754780332473191427.jpg" style="" title="茶-详情页2号_11.jpg"><img src="http://imgcon.tea7.com/6363745754980334794535772.jpg" style="" title="茶-详情页2号_12.jpg"><img src="http://imgcon.tea7.com/6363745754825646476263422.jpg" style="" title="茶-详情页2号_13.jpg"><img src="http://imgcon.tea7.com/6363745754866271095321323.jpg" style="" title="茶-详情页2号_14.jpg"></p><table width="0" border="0" cellspacing="0" cellpadding="0"><tbody><tr class="firstRow"><td><br></td><td><br></td></tr><tr><td><a href="http://www.tea7.com/item/2303.html" target="_blank"><img src="http://imgcon.tea7.com/6363745754927210463908176.jpg" style="" title="茶-详情页2号_15_01.jpg"></a></td><td><a href="http://www.tea7.com/item/2306.html" target="_blank"><img src="http://imgcon.tea7.com/6363745754883458756606937.jpg" style="" title="茶-详情页2号_15_02.jpg"></a></td></tr></tbody></table><table><tbody><tr class="firstRow"><td><img src="http://imgcon.tea7.com/6363745754906897174379225.jpg" style="" title="茶-详情页2号_15_03.jpg"></td></tr></tbody></table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sectionbox" id="part_comment_main">
+                            <div class="detail_title">
+                                <p><code>商品评价</code></p>
+                            </div>
+                             <div class="cmt_point cle">
+                                <div class="d_left">
+                                    <div class="d_total">
+                                        <div class="all_points">
+                                            <b class="setReviewPoint">4.9</b>
+                                        </div>
+                                        <div class="big_star">
+                                            <i class="SetRatingPercent" style="width: 98%;"></i>
+                                        </div>
+                                        <div class="all_people">
+                                            共<em class="setReviewNumber">30</em>人打分
+                                        </div>
+                                    </div>
+                                <div class="list">
+                                    <ul id="cmt_point_list">
+                                        <li id="good_point">
+                                            <label>好评：</label>
+                                            <p>
+                                                <span id="setGoodPercent" style="width:0%"></span>
+                                            </p>
+                                            <em id="goodPercent">90.00NaN%</em>
+                                        </li>
+                                        <li id="medium_point">
+                                            <label>中评：</label>
+                                            <p>
+                                                <span id="setMediumPercent" style="width: 10%;"></span>
+                                            </p>
+                                            <em id="mediumPercent">10.00%</em>
+                                        </li>
+                                        <li id="poor_point">
+                                            <label>差评：</label>
+                                            <p>
+                                                <span id="setBadPercent" style="width:0%"></span>
+                                            </p>
+                                            <em id="badPercent">0.00%</em>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="d_right">
+                                <p>成为推荐评论将获额外茶币奖励。</p>
+                                <div>
+                                    <a href="/orders?OrderStatus=25" target="_blank" class="btn">我要评论</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment_box">
+                            <div class="comment_list" id="comment_list">
+                                <div class="com_md cle">
+                                    <div class="com_md_left">
+                                        <img class="face" src="http://img.tea7.com/0041178_0.png?x-oss-process=image/resize,w_300">
+                                    </div>
+                                    <div class="com_md_right">
+                                        <div class="com_md_right_head cle">
+                                            <div class="fl">
+                                                <span class="name">185****6448</span>
+                                            </div>
+                                            <div class="fr">
+                                                <span class="min_star">
+                                                    <cite class="ping_star">
+                                                        <i style="width:80%;"></i>
+                                                    </cite>
+                                                </span>
+                                                <span class="com_time">2019-08-30 20:13</span>
+                                            </div>
+                                        </div>
+                                        <div class="com_md_bd">
+                                            <div class="text">
+                                                <div class="text_bd">
+                                                    口感很好，名副其实的大红袍。
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="com_md cle">
+                                    <div class="com_md_left">
+                                        <img class="face" src="http://img.tea7.com/0111364_0.jpeg?x-oss-process=image/resize,w_300">
+                                    </div>
+                                    <div class="com_md_right">
+                                        <div class="com_md_right_head cle">
+                                            <div class="fl">
+                                                <span class="name">外婆家的万小姐</span>
+                                            </div>
+                                            <div class="fr">
+                                                <span class="min_star">
+                                                    <cite class="ping_star">
+                                                        <i style="width:100%;"></i>
+                                                    </cite>
+                                                </span>
+                                                <span class="com_time">2019-08-09 10:15</span>
+                                            </div>
+                                        </div>
+                                        <div class="com_md_bd">
+                                            <div class="text">
+                                                <div class="text_bd">
+                                                    好好好好好
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="com_md cle">
+                                    <div class="com_md_left">
+                                        <img class="face" src="http://img.tea7.com/0102565_0.jpeg?x-oss-process=image/resize,w_300">
+                                    </div>
+                                    <div class="com_md_right">
+                                        <div class="com_md_right_head cle">
+                                            <div class="fl">
+                                                <span class="name">水也醉人</span>
+                                            </div>
+                                            <div class="fr">
+                                                <span class="min_star">
+                                                    <cite class="ping_star">
+                                                        <i style="width:100%;"></i>
+                                                    </cite>
+                                                </span>
+                                                <span class="com_time">2019-06-18 12:03</span>
+                                            </div>
+                                        </div>
+                                        <div class="com_md_bd">
+                                            <div class="text">
+                                                <div class="text_bd">
+                                                    口感还可以
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="com_md cle">
+                                    <div class="com_md_left">
+                                        <img class="face" src="http://img.tea7.com/0118900_0.jpeg?x-oss-process=image/resize,w_300">
+                                    </div>
+                                    <div class="com_md_right">
+                                        <div class="com_md_right_head cle">
+                                            <div class="fl">
+                                                <span class="name">🐳JanSin4</span>
+                                            </div>
+                                            <div class="fr">
+                                                <span class="min_star">
+                                                    <cite class="ping_star">
+                                                        <i style="width:80%;"></i>
+                                                    </cite>
+                                                </span>
+                                                <span class="com_time">2019-04-25 14:21</span>
+                                            </div>
+                                        </div>
+                                        <div class="com_md_bd">
+                                            <div class="text">
+                                                <div class="text_bd">
+                                                    好茶，香味足
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="com_md cle">
+                                    <div class="com_md_left">
+                                        <img class="face" src="http://img.tea7.com/0041178_0.png?x-oss-process=image/resize,w_300">
+                                    </div>
+                                    <div class="com_md_right">
+                                        <div class="com_md_right_head cle">
+                                            <div class="fl">
+                                                <span class="name">155****1932</span>
+                                            </div>
+                                            <div class="fr">
+                                                <span class="min_star">
+                                                    <cite class="ping_star">
+                                                        <i style="width:100%;"></i>
+                                                    </cite>
+                                                </span>
+                                                <span class="com_time">2019-04-20 15:30</span>
+                                            </div>
+                                        </div>
+                                        <div class="com_md_bd">
+                                            <div class="text">
+                                                <div class="text_bd">
+                                                    白龙珠喝着还是很不错的
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pagenav" id="reviewPager"><span class="checked disabled" jp-role="prev" jp-data="0"><a href="javascript:;">上一页</a></span><span jp-role="page" jp-data="1" class="page-cur"><a href="javascript:;">1</a></span><span jp-role="page" jp-data="2"><a href="javascript:;">2</a></span><span jp-role="page" jp-data="3"><a href="javascript:;">3</a></span><span jp-role="page" jp-data="4"><a href="javascript:;">4</a></span><span jp-role="page" jp-data="5"><a href="javascript:;">5</a></span><span jp-role="next" jp-data="2"><a href="javascript:;">下一页</a></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="detail_right load_BestSellProducts">    
+                <div class="right_box">
+                    <div class="hd">店铺热门销售</div>
+                    <div class="bd">
+                        <ul class="cle">
+                            <li>
+                                <p class="img">
+                                    <a href="/item/1248.html">
+                                        <img width="150" height="150" alt="普洱 糯米香小熟沱250g 喝起来很暖心" src="http://img.tea7.com/0013995_0.jpeg?x-oss-process=image/resize,w_300" title="普洱 糯米香小熟沱250g 喝起来很暖心">
+                                    </a>
+                                </p>
+                                <p class="name">
+                                    <a href="/item/1248.html">普洱 糯米香小熟沱250g 喝起来很暖心</a>
+                                </p>
+                                <p class="price">
+                                    <b>¥49</b>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="img">
+                                    <a href="/item/1951.html">
+                                        <img width="150" height="150" alt="茶具-公道杯-方形玻璃公道杯" src="http://img.tea7.com/0114776_0.jpeg?x-oss-process=image/resize,w_300" title="茶具-公道杯-方形玻璃公道杯">
+                                    </a>
+                                </p>
+                                <p class="name">
+                                    <a href="/item/1951.html">茶具-公道杯-方形玻璃公道杯</a>
+                                </p>
+                                <p class="price">
+                                    <b>¥29</b>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="img">
+                                    <a href="/item/2531.html">
+                                        <img width="150" height="150" alt="靠谱经典 滇红 300g" src="http://img.tea7.com/0015669_0.jpeg?x-oss-process=image/resize,w_300" title="靠谱经典 滇红 300g">
+                                    </a>
+                                </p>
+                                <p class="name">
+                                    <a href="/item/2531.html">靠谱经典 滇红 300g</a>
+                                </p>
+                                <p class="price">
+                                    <b>¥88</b>
+                                </p>
+                            </li>
+                            <li>
+                                <p class="img">
+                                    <a href="/item/1382.html">
+                                        <img width="150" height="150" alt="1725铁观音 尊贵品质 500g一斤装 高性价比" src="http://img.tea7.com/0103361_0.jpeg?x-oss-process=image/resize,w_300" title="1725铁观音 尊贵品质 500g一斤装 高性价比">
+                                    </a>
+                                </p>
+                                <p class="name">
+                                    <a href="/item/1382.html">1725铁观音 尊贵品质 500g一斤装 高性价比</a>
+                                </p>
+                                <p class="price">
+                                    <b>¥99</b>
+                                </p>
+                            </li>
+                
+                            <li>
+                                <p class="img">
+                                    <a href="/item/1038.html">
+                                        <img width="150" height="150" alt="2019春茶 明前龙井·飞花系列80g罐装" src="http://img.tea7.com/0123010_0.jpeg?x-oss-process=image/resize,w_300" title="2019春茶 明前龙井·飞花系列80g罐装">
+                                    </a>
+                                </p>
+                                <p class="name">
+                                    <a href="/item/1038.html">2019春茶 明前龙井·飞花系列80g罐装</a>
+                                </p>
+                                <p class="price">
+                                    <b>¥128</b>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <script src="../public/js/staticjs/jquery-1.7.min.js"></script>
+    <script>
+        $(function(){  
+            $(".cle").on("mouseenter","li img",function(e){
+                $(e.target).parent().addClass("current").siblings().removeClass("current");
+                var tex1 =$(e.target).siblings().addClass("on");
+                var tex2=$(e.target).parent().siblings().children().removeClass("on");
+                    //console.log(tex1,tex2);
+                var t = $(e.target)[0].dataset.va;
+                //console.log($(e.target)[0]);
+                $(".view_bd img").eq(t).show().siblings().hide();
+            })
+            
+                
+        })
+        
+        /////////////////////////////////////
+        var setAmount = {
+            min:1,
+            max:100,
+            reg: function (x) {
+                return new RegExp("^[0-9]\\d*$").test(x);
+            },
+            amount: function (obj, mode) {
+                var x = $(obj).val();
+                if (x == "") x = 0;a
+                if (this.reg(x)) {
+                    if (mode) {
+                        x++;
+                    } else {
+                        x--;
+                    }
+                } else {
+                    $(obj).val(this.min);
+                    $(obj).focus();
+                }
+                return x;
+            },
+            change_count:function(num){
+                console.log(num);
+                if(num==1){
+                        let val= parseInt($('#quantity').val());
+                        console.log(val);
+                        $('#quantity').val(val+1);
+                        if(val>=this.max){
+                            $('#quantity').val(this.max);
+                        }         
+                }
+                if(num==-1){
+                        let val= parseInt($('#quantity').val());
+                        console.log(val);
+                        $('#quantity').val(val-1);
+                        if(val<=this.min){
+                            $('#quantity').val(this.min);
+                        }     
+                } 
+                
+            },
+            load: function () {
+                var x = $('#quantity').val();
+                if (x == "") {
+                    $('#quantity').val(this.min);
+                }
+            },
+            modify: function () {
+                var x = $('#quantity').val();
+                if (x != "")
+                if (x < this.min || x > this.max || !this.reg(x)) {
+                    $('#quantity').val(this.min);
+                    $('#quantity').focus();
+                }
+            }
+
+
+        } 
+        //////////////////////////////////////////////////////{ "Id": ProductParms.Id }////////////////////////////////////
+        var ProductParms = {
+            Id:1 
+        };
+        if (typeof (ProductParms) != "undefined") {
+    //加载产品所需要的信息
+    $.getJSON("/api/Product/GetProductBaseInfo", function (data) {
+    //     if (data.ProductCombinationList.length > 0) {
+    //         $(data.ProductCombinationList).each(function (n, item) {
+    //             var valuearray = [];
+    //             $(item.ProductCombinationList).each(function (i, it) {
+    //                 valuearray.push(it.ProductAttributeValueId.toString());
+    //             });
+    //            ProductCombinationList.push(valuearray);
+    //         });
+    //     }
+    //     ResetAttrAttributelist();
+    //     $(".price-val-for-dyn-upd").html(ForDight(data.Price,2));
+    //     $(".setSaleVolume").html(data.SaleVolume);
+    //     $(".setStockQuantity").html(data.StockQuantity);
+    //     $(".setReviewNumber").html(data.ApprovedTotalReviews);
+    //     if (typeof (data.GoodReviewCount) == "undefined" || data.GoodReviewCount == null || data.GoodReviewCount < 0) data.GoodReviewCount = 0;
+    //     if (typeof (data.MediumReviewCount) == "undefined" || data.MediumReviewCount == null || data.GoodReviewCount < 0) data.MediumReviewCount = 0;
+    //     if (typeof (data.BadReviewCount) == "undefined" || data.BadReviewCount == null || data.GoodReviewCount < 0) data.BadReviewCount = 0;
+    //     var rating = 0, ratingPercent = 0,
+    //         goodPercent = 0, badPercent = 0, mediumPercent = 0;
+
+    //     if (data.ApprovedTotalReviews > 0) {
+    //         rating = ForDight(data.ApprovedRatingSum / data.ApprovedTotalReviews, 1);
+    //         if (rating > 5) { rating = 5; }
+    //         ratingPercent = ForDight(((data.ApprovedRatingSum * 20) / data.ApprovedTotalReviews), 1);
+    //         if (ratingPercent > 100) ratingPercent = 100;
+    //         goodPercent = ForDight(data.GoodReviewCount * 100.0 / data.ApprovedTotalReviews, 0);
+    //         mediumPercent = ForDight(data.MediumReviewCount * 100.0 / data.ApprovedTotalReviews, 0);
+    //         badPercent = ForDight(data.BadReviewCount * 100.0 / data.ApprovedTotalReviews, 0);
+
+    //         goodPercent += 100 - (goodPercent + mediumPercent + badPercent);  //补齐差价
+    //     }
+       
+    //     //这里处理特价
+    //     if (typeof (data.HasSpecialPrice) == "boolean"
+    //         && data.HasSpecialPrice
+    //         && data.SpecialPrice >= 0) {
+    //         if (priceValForDynUpd) {
+    //             priceValForDynUpd = data.SpecialPrice;
+    //         }
+    //         $(".price-val-for-dyn-upd").html(data.SpecialPrice);
+    //         $("#product_indo_area .t1").html(data.ActivityTitle);
+    //         if (data.SpecialPriceTime > 0) {
+    //             $("#product_indo_area").append('<li class="t6"><span class="timedown" id="timedown" data-time="' + data.SpecialPriceTime + '"><i class="iconfont">:</i><span class="s">剩余时间：</span></span></li>');
+
+    //             timeDownFn({
+    //                 elem: $('#timedown'),
+    //                 endTime: $('#timedown').data("time"),
+    //                 endFunc: function () {
+    //                     $('#timedown').html("特卖已结束")
+    //                 }
+    //             });
+    //         }
+    //         if (data.GiftPoints > 0) {
+    //             $(".SetPoints .orange").html(data.GiftPoints);
+    //         }
+    //         else {
+    //             $(".SetPoints").hide();
+    //         }
+    //     }
+
+    //     $("#badPercent").html(badPercent + "%");
+    //     $("#setBadPercent").css({ "width": badPercent + "%" });
+    //     $("#goodPercent").html(goodPercent + "%");
+    //     $("#setGoodPercent").css({ "width": goodPercent + "%" });
+    //     $("#mediumPercent").html(mediumPercent + "%");
+    //     $("#setMediumPercent").css({ "width": mediumPercent + "%" });
+    //     $(".setReviewPoint").html(rating);
+    //     $(".setReviewPoint10").html(rating * 10);
+    //     $(".SetRatingPercent").css({ "width": ratingPercent + "%" });
+
+    //     // 库存限制
+    //     var PurchaseNumber = 99;
+    //     if (typeof ($("#li_PurchaseType").attr("data-num")) != "undefined")
+    //         PurchaseNumber = parseInt($("#li_PurchaseType").attr("data-num"));
+
+    //     setAmount.setmax(data.StockQuantity); // 设置购物车最大值
+    //     if (data.IsSoldOut) {
+    //         setAmount.setmin(0);
+    //         setAmount.setmax(0);
+    //         document.getElementById("Quantity").value = "0";
+    //         $(".add_cart_li").html('<a href="javascript:;" id="buy_btn" class="buy_btn_Unable">已售罄</a>');
+    //         $(".buy_fr span").eq(0).html('<a href="javascript:;" id="buy_btn" class="buy_btn_Unable">已售罄</a>');
+    //     }
+    //     ///存在限购数量时 设置可选择数量的最大值
+    //     if (data.StockQuantity < PurchaseNumber)
+    //         setAmount.setmax(PurchaseNumber);
+
+    //     $(".add_cart_li").show();
+    //     //这里还要处理特价
+    //     //加载评论信息
+    //     if ($('#reviewPager').length > 0) {
+    //         $.getJSON("/API/Product/GetProductReviews", { "Id": ProductParms.Id }, function (data) {
+    //             if (data.TotalCount) {
+    //                 $.ajax({
+    //                     data: { ProductId: ProductParms.Id, PageNumber: 1 },
+    //                     url: '/Catalog/ProductReviewsBlock',
+    //                     type: 'POST',
+    //                     success: function (data) {
+    //                         $("#comment_list").html(data.html);
+    //                         BindViewPhonsClick();
+    //                     }
+    //                 });
+    //                 $('#reviewPager').jqPaginator({
+    //                     totalCounts: data.TotalCount,
+    //                     pageSize: 5,
+    //                     currentPage: 1,
+    //                     visiblePages: 5,
+    //                     activeClass: 'page-cur',
+    //                     prev: '<span class=\'checked\'><a href=\'javascript:;\'>上一页</a><\/span>',
+    //                     next: '<span><a href=\'javascript:;\'>下一页</a><\/span>',
+    //                     page: '<span><a href=\'javascript:;\'>{{page}}</a><\/span>',
+    //                     onPageChange: function (num, type) {
+    //                         $.ajax({
+
+    //                             data: { ProductId: ProductParms.Id, PageNumber: num },
+    //                             url: '/Catalog/ProductReviewsBlock',
+    //                             type: 'POST',
+    //                             success: function (data) {
+    //                                 $("#comment_list").html(data.html);
+    //                                 BindViewPhonsClick();
+    //                             }
+    //                         });
+    //                     }
+    //                 });
+    //             } else {
+    //                 $(".comment_box").html("暂无评论信息");
+    //             }
+    //         });
+    //     }
+    // });
+    // //判断用户是否登录，如果登录就显示极速购买
+    // $.getJSON("/json/GetCurrentCustomer", function (data) {
+    //     if (typeof (ProductParms.SupportCashOnDelivery) == "undefined")
+    //         ProductParms.SupportCashOnDelivery = true;
+    //     if (data.AllowSpeedBuy && ProductParms.SupportCashOnDelivery) {
+    //         // 表示是已经登录的用户, 并且允许快速购买
+    //         if ($("#buy_btn").length > 0) {
+    //             var buyBtn = $("#buy_btn");
+    //             if (!buyBtn.hasClass("buy_btn_Unable")) {
+    //                 buyBtn.html("极速购买");
+    //                 buyBtn.attr("onclick", "AjaxCart.speedbuy('/speedtobuy/" + ProductParms.Id + "', '#product-details-form'); return false;");
+    //             }
+    //         }
+    //     }
+    // });
+    // $(function () {
+    //     $("#buy_btn").click(function () {
+    //         if (!checking()) return;
+    //         AjaxCart.addproducttocart('/AddProductVariantToCheckout/' + $(this).attr("value") + '/0', '#product-details-form'); return false;
+    //     });
+    //     $("#cart_btn").click(function () {
+    //         if (!checking()) return;
+    //         AjaxCart.addproducttocart('/addproductvarianttocart/' + $(this).attr("value") + '/1', '#product-details-form'); return false;
+    //     });
+     });
+    
+}      
+        
+        
+        
+    </script>
+    
+</body>
+</html>

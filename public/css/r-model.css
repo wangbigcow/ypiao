@@ -1,0 +1,90 @@
+/*右侧*/
+
+.r-maipiao{
+    height: 82px;
+    padding: 20px 0;
+    margin-bottom: 24px;
+    text-align: center;
+    border: 1px solid #e0e7eb;
+    border-radius: 3px;
+    background-color: #fff;
+}
+.r-maipiao p{
+    font-size: 16px;
+    color: #313131;
+    margin-bottom: 24px;
+}
+.r-maipiao button{
+    width: 118px;
+    height: 35px;
+    border: 0;
+    border-radius: 30px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    background-position: -204px -1399px;
+}
+
+.r-remen {
+    background-color: #fff;
+    border: 1px solid #e2e5e6;
+    border-radius: 3px;
+    min-height: 220px;
+    overflow: hidden;
+}
+.zuijin-top {
+    border-bottom: 1px solid #e2e5e6;
+    color: #313131;
+    font-size: 17px;
+    height: 51px;
+    line-height: 51px;
+    text-align: center;
+    background: #fff;
+
+}
+.remen-liebiao {
+    min-height: 220px;
+    overflow: hidden;
+    padding: 0 18px;
+}
+
+
+.liebiao-da {
+    border-bottom: 1px dashed #e2e5e6;
+    height: 136px;
+    padding-bottom: 12px;
+    padding-top: 17px;
+}
+.liebiao-da img {
+    display: block;
+    float: left;
+    height: 140px;
+    margin-left: 0px;
+    width: 98px;
+
+}
+.liebiao-da .xiangmu-xinxi {
+    display: block;
+    float: left;
+    height: 100%;
+    margin-left: 12px;
+    width: 115px;
+}
+.liebiao-da .xiangmu-xinxi a {
+    -moz-box-orient: vertical;
+    color: #2d3e4f;
+    display: -webkit-box;
+    font-size: 12px;
+    min-height: 50px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 127px;
+}
+.liebiao-da .xiangmu-xinxi p {
+    color: #7f8c8d;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

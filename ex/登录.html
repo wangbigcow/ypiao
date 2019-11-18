@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="applicable-device" content="pc">
+    <meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token" content="UXJuZ3haR0k2ClsjQGIADjw3NxUXYjY.OhUjNx4rJiQ.MTYAGykTIA==">
+    <title>会员登录-有票网</title>
+    <meta name="keywords" content="登录,会员,演出票,门票在线订购,买票,卖票,购票">
+<meta name="description" content="有票网，中国最专业的票品交易平台，在有票你可以购买所有演出赛事门票，有多的票也可以在有票出售。 所有在售的门票都享受有票官方担保，100%真票。">
+<link href="https://images.ypiao.com/static/css/common.css?a=1562845647" rel="stylesheet">
+<link href="https://images.ypiao.com/static/css/order.css?a=1562845647" rel="stylesheet">
+    <link rel="canonical" href="https://www.ypiao.com/user/login/?re_url=%2Forder%2F%3Ft_id%3DMtjiAdxMzYyNw_a_a%26e_id%3DNeziMdxNjY_a%26s_id%3DMsjiUdwNDc4%26n%3D2" />
+    <link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.ypiao.com/user/login/?re_url=%2Forder%2F%3Ft_id%3DMtjiAdxMzYyNw_a_a%26e_id%3DNeziMdxNjY_a%26s_id%3DMsjiUdwNDc4%26n%3D2" />
+    <meta name="mobile-agent" content="format=html5;url=https://m.ypiao.com/user/login/?re_url=%2Forder%2F%3Ft_id%3DMtjiAdxMzYyNw_a_a%26e_id%3DNeziMdxNjY_a%26s_id%3DMsjiUdwNDc4%26n%3D2" />
+
+
+
+    <!--[if lt IE 9]>
+    <div class="ie8">
+        <div class="ie8-tx">
+            <div class="tx-l l">
+                <i>您的浏览器版本不支持</i>
+                <i>为了得到我们网站最好的体验效果，我们建议您升级游览器或选择另一个Web浏览器比如谷歌 火狐等...</i>
+            </div>
+            <div class="tx-r l">
+                <div class="tx-r-div1 ico"></div>
+                <div class="tx-r-div2">关注有票微信号</div>
+                <div class="tx-r-div1 ico"></div>
+                <div class="tx-r-div2">下载有票app</div>
+            </div>
+        </div>
+    </div>
+    <![endif]-->
+</head>
+<body>
+            <!-- 提示弹窗 -->
+<!-- 判断设备 手机 ipad 登录pc站直接跳转m站 -->
+    <script type="text/javascript">
+        var urlDangqian = window.location.href;
+        var urlDangqian1 = urlDangqian.replace('www','m');
+        (function browserRedirect(){
+              var sUserAgent = navigator.userAgent.toLowerCase();
+              var bIsIpad = sUserAgent.match(/ipad/i) == 'ipad';
+              var bIsIphone = sUserAgent.match(/iphone os/i) == 'iphone os';
+              var bIsMidp = sUserAgent.match(/midp/i) == 'midp';
+              var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == 'rv:1.2.3.4';
+              var bIsUc = sUserAgent.match(/ucweb/i) == 'web';
+              var bIsCE = sUserAgent.match(/windows ce/i) == 'windows ce';
+              var bIsWM = sUserAgent.match(/windows mobile/i) == 'windows mobile';
+              var bIsAndroid = sUserAgent.match(/android/i) == 'android';
+              if(bIsIpad || bIsIphone || bIsMidp || bIsUc7 || bIsUc || bIsCE || bIsWM || bIsAndroid ){
+                    window.location.href = urlDangqian1;
+              }
+         })();
+    </script>
+    <script type="text/javascript">
+        //平台、设备和操作系统
+        var system = {
+            win: false,
+            mac: false,
+            xll: false,
+            ipad:false
+        };
+        //检测平台
+        var p = navigator.platform;
+        system.win = p.indexOf("Win") == 0;
+        system.mac = p.indexOf("Mac") == 0;
+        system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+        system.ipad = (navigator.userAgent.match(/iPad/i) != null)?true:false;
+        //跳转语句，如果是手机访问就自动跳转到wap.baidu.com页面
+        if (system.win || system.mac || system.xll||system.ipad) {} else {
+            window.location.href = urlDangqian1;
+        };
+    </script>
+<div class="TANcHUAG">
+    <div class="allTan"></div>
+</div>
+<!-- 头部导航 -->
+    <header class="hed hed1">
+        <div class="hed w">
+            <a href="/" class="l hed-logo">
+                <i class="iconfont">&#xe606;</i>
+            </a>
+            <div class="l hed-cshi hed">    <!-- 城市 -->
+                <a href="/">全国<span style=display:none ></span></a>
+                <span class="r hed-sj ico"></span>
+                <!-- 城市列表 -->
+                <ul class="chengshi-liebiao">
+                                            <li><a href="/bj/">北京</a ></li>
+                                            <li><a href="/sh/">上海</a ></li>
+                                            <li><a href="/gz/">广州</a ></li>
+                                            <li><a href="/sz/">深圳</a ></li>
+                                            <li><a href="/cq/">重庆</a ></li>
+                                            <li><a href="/cd/">成都</a ></li>
+                                            <li><a href="/tj/">天津</a ></li>
+                                            <li><a href="/nj/">南京</a ></li>
+                                            <li><a href="/zz/">郑州</a ></li>
+                                            <li><a href="/sx/">绍兴</a ></li>
+                                            <li><a href="/xa/">西安</a ></li>
+                                            <li><a href="/wh/">武汉</a ></li>
+                                            <li><a href="/cs/">长沙</a ></li>
+                                            <li><a href="/hf/">合肥</a ></li>
+                                            <li><a href="/fs/">佛山</a ></li>
+                                            <li><a href="/wx/">无锡</a ></li>
+                                            <li><a href="/hz/">杭州</a ></li>
+                                            <li><a href="/sjz/">石家庄</a ></li>
+                                            <li><a href="/qd/">青岛</a ></li>
+                                            <li><a href="/dl/">大连</a ></li>
+                                            <li><a href="/my/">绵阳</a ></li>
+                                            <li><a href="/cz/">常州</a ></li>
+                                            <li><a href="/nt/">南通</a ></li>
+                                            <li><a href="/nb/">宁波</a ></li>
+                                            <li><a href="/nc/">南昌</a ></li>
+                                            <li><a href="/xm/">厦门</a ></li>
+                                            <li><a href="/jh/">金华</a ></li>
+                                            <li><a href="/zh/">珠海</a ></li>
+                                            <li><a href="/fz/">福州</a ></li>
+                                            <li><a href="/km/">昆明</a ></li>
+                                            <li><a href="/nn/">南宁</a ></li>
+                                            <li><a href="/sy/">沈阳</a ></li>
+                                            <li><a href="/hrb/">哈尔滨</a ></li>
+                                            <li><a href="/ty/">太原</a ></li>
+                                            <li><a href="/cc/">长春</a ></li>
+                                            <li><a href="/jn/">济南</a ></li>
+                                            <li><a href="/gl/">桂林</a ></li>
+                                            <li><a href="/ly/">洛阳</a ></li>
+                                            <li><a href="/gy/">贵阳</a ></li>
+                                            <li><a href="/qz/">泉州</a ></li>
+                                            <li><a href="/zs/">中山</a ></li>
+                                            <li><a href="/su/">苏州</a ></li>
+                                            <li><a href="/huizhou/">惠州</a ></li>
+                                            <li><a href="/jx/">嘉兴</a ></li>
+                                            <li><a href="/dg/">东莞</a ></li>
+                                            <li><a href="/ls/">拉萨</a ></li>
+                                            <li><a href="/wlmq/">乌鲁木齐</a ></li>
+                                            <li><a href="/xz/">徐州</a ></li>
+                                            <li><a href="/qhd/">秦皇岛</a ></li>
+                                            <li><a href="/zj/">镇江</a ></li>
+                                            <li><a href="/lf/">廊坊</a ></li>
+                                            <li><a href="/hd/">邯郸</a ></li>
+                                            <li><a href="/dz/">达州</a ></li>
+                                            <li><a href="/xy/">襄阳</a ></li>
+                                            <li><a href="/tz/">台州</a ></li>
+                                            <li><a href="/yz/">扬州</a ></li>
+                                            <li><a href="/as/">安顺</a ></li>
+                                            <li><a href="/bt/">包头</a ></li>
+                                            <li><a href="/hhht/">呼和浩特</a ></li>
+                                            <li><a href="/xg/">香港</a ></li>
+                                            <li><a href="/tb/">台北</a ></li>
+                                            <li><a href="/gx/">高雄</a ></li>
+                                            <li><a href="/am/">澳门</a ></li>
+                                            <li><a href="/abazizhizhou/">阿坝藏族羌族自治州</a ></li>
+                                            <li><a href="/?domain=abzb">阿布扎比</a ></li>
+                                            <li><a href="/?domain=ae">艾恩</a ></li>
+                                            <li><a href="/alashanmeng/">阿拉善盟</a ></li>
+                                            <li><a href="/?domain=anyang">安阳</a ></li>
+                                            <li><a href="/?domain=baicheng">白城</a ></li>
+                                            <li><a href="/?domain=baise">百色</a ></li>
+                                            <li><a href="/baishan/">白山</a ></li>
+                                            <li><a href="/?domain=bl">巴黎</a ></li>
+                                            <li><a href="/?domain=banghu">蚌埠</a ></li>
+                                            <li><a href="/bayanzhaer/">巴彦淖尔</a ></li>
+                                            <li><a href="/?domain=bijie">毕节</a ></li>
+                                            <li><a href="/chd/">常德</a ></li>
+                                            <li><a href="/changzhi/">长治</a ></li>
+                                            <li><a href="/?domain=chaoyang">朝阳</a ></li>
+                                            <li><a href="/?domain=chengde">承德</a ></li>
+                                            <li><a href="/chizhou/">池州</a ></li>
+                                            <li><a href="/chongzuo/">崇左</a ></li>
+                                            <li><a href="/dq/">大庆</a ></li>
+                                            <li><a href="/?domain=db">迪拜</a ></li>
+                                            <li><a href="/?domain=dx">定西</a ></li>
+                                            <li><a href="/?domain=eerduosi">鄂尔多斯</a ></li>
+                                            <li><a href="/emeishan/">峨眉山</a ></li>
+                                            <li><a href="/ezhou/">鄂州</a ></li>
+                                            <li><a href="/?domain=fangchenggang">防城港</a ></li>
+                                            <li><a href="/?domain=fuxin">阜新</a ></li>
+                                            <li><a href="/?domain=fuyang">阜阳</a ></li>
+                                            <li><a href="/fzh/">抚州</a ></li>
+                                            <li><a href="/gmzzzzz/">甘孜藏族自治州</a ></li>
+                                            <li><a href="/gzh/">赣州市</a ></li>
+                                            <li><a href="/?domain=ga">广安</a ></li>
+                                            <li><a href="/guangy/">广元</a ></li>
+                                            <li><a href="/?domain=haidong">海东</a ></li>
+                                            <li><a href="/?domain=haikou">海口</a ></li>
+                                            <li><a href="/hw/">海外</a ></li>
+                                            <li><a href="/haozhou/">亳州</a ></li>
+                                            <li><a href="/?domain=hechi">河池</a ></li>
+                                            <li><a href="/?domain=hegang">鹤岗</a ></li>
+                                            <li><a href="/?domain=heihe">黑河</a ></li>
+                                            <li><a href="/hengshui/">衡水</a ></li>
+                                            <li><a href="/?domain=heyuan">河源</a ></li>
+                                            <li><a href="/hezhou/">贺州</a ></li>
+                                            <li><a href="/?domain=huaibei">淮北</a ></li>
+                                            <li><a href="/?domain=huaihua">怀化</a ></li>
+                                            <li><a href="/huangshan/">黄山</a ></li>
+                                            <li><a href="/?domain=hs">黄石</a ></li>
+                                            <li><a href="/?domain=huludao">葫芦岛</a ></li>
+                                            <li><a href="/jiamusi/">佳木斯</a ></li>
+                                            <li><a href="/?domain=jz">焦作</a ></li>
+                                            <li><a href="/?domain=jiayuguan">嘉峪关</a ></li>
+                                            <li><a href="/?domain=jieyang">揭阳</a ></li>
+                                            <li><a href="/jinchang/">金昌</a ></li>
+                                            <li><a href="/?domain=jingmen">荆门</a ></li>
+                                            <li><a href="/?domain=jz">荆州</a ></li>
+                                            <li><a href="/jn/">济宁</a ></li>
+                                            <li><a href="/jinzhou/">锦州</a ></li>
+                                            <li><a href="/?domain=jiuquan">酒泉</a ></li>
+                                            <li><a href="/?domain=jixi">鸡西</a ></li>
+                                            <li><a href="/?domain=kaifeng">开封</a ></li>
+                                            <li><a href="/?domain=laibin">来宾</a ></li>
+                                            <li><a href="/lz/">兰州</a ></li>
+                                            <li><a href="/?domain=lafe">勒阿弗尔</a ></li>
+                                            <li><a href="/?domain=ln">雷恩</a ></li>
+                                            <li><a href="/?domain=la">里昂</a ></li>
+                                            <li><a href="/?domain=liaoyang">辽阳</a ></li>
+                                            <li><a href="/?domain=liaoyuan">辽源</a ></li>
+                                            <li><a href="/?domain=lx">临夏</a ></li>
+                                            <li><a href="/linzhi/">林芝</a ></li>
+                                            <li><a href="/lsh/">丽水</a ></li>
+                                            <li><a href="/liuzhou/">柳州</a ></li>
+                                            <li><a href="/?domain=longnan">陇南</a ></li>
+                                            <li><a href="/longyan/">龙岩</a ></li>
+                                            <li><a href="/?domain=ld">伦敦</a ></li>
+                                            <li><a href="/?domain=luohe">漯河</a ></li>
+                                            <li><a href="/luzhou/">泸州</a ></li>
+                                            <li><a href="/?domain=lianyungang">连云港</a ></li>
+                                            <li><a href="/?domain=maoming">茂名</a ></li>
+                                            <li><a href="/meishan/">眉山</a ></li>
+                                            <li><a href="/?domain=mng">摩纳哥</a ></li>
+                                            <li><a href="/mudanjiang/">牡丹江</a ></li>
+                                            <li><a href="/panjin/">盘锦</a ></li>
+                                            <li><a href="/pzh/">攀枝花</a ></li>
+                                            <li><a href="/pdsh/">平顶山</a ></li>
+                                            <li><a href="/pingliang/">平凉</a ></li>
+                                            <li><a href="/pingxiang/">萍乡</a ></li>
+                                            <li><a href="/?domain=puyang">濮阳</a ></li>
+                                            <li><a href="/qiandongnanzizhizhou/">黔东南苗族侗族自治州</a ></li>
+                                            <li><a href="/qianjiang/">潜江</a ></li>
+                                            <li><a href="/qiannanbuyizuzizhizhou/">黔南布依族苗族自治州</a ></li>
+                                            <li><a href="/?domain=qianxi">黔西南布依族苗族自治州</a ></li>
+                                            <li><a href="/qingyang/">庆阳</a ></li>
+                                            <li><a href="/qingyuan/">清远</a ></li>
+                                            <li><a href="/qinzhou/">钦州</a ></li>
+                                            <li><a href="/?domain=qionghai">琼海</a ></li>
+                                            <li><a href="/?domain=qiqihaer">齐齐哈尔</a ></li>
+                                            <li><a href="/?domain=qj">曲靖</a ></li>
+                                            <li><a href="/quzhou/">衢州</a ></li>
+                                            <li><a href="/?domain=rch">仁川</a ></li>
+                                            <li><a href="/?domain=rb">晋中</a ></li>
+                                            <li><a href="/rzh/">日照</a ></li>
+                                            <li><a href="/?domain=sj">沙迦</a ></li>
+                                            <li><a href="/shaoyang/">邵阳</a ></li>
+                                            <li><a href="/shengbidebao/">圣彼得堡</a ></li>
+                                            <li><a href="/shiyan/">十堰</a ></li>
+                                            <li><a href="/shizuishan/">石嘴山</a ></li>
+                                            <li><a href="/shuozhou/">朔州</a ></li>
+                                            <li><a href="/songyuan/">松原</a ></li>
+                                            <li><a href="/?domain=sn">遂宁</a ></li>
+                                            <li><a href="/suizhou/">随州</a ></li>
+                                            <li><a href="/?domain=sq">索契</a ></li>
+                                            <li><a href="/?domain=tacheng">塔城</a ></li>
+                                            <li><a href="/?domain=td">台东</a ></li>
+                                            <li><a href="/?domain=tianmen">天门</a ></li>
+                                            <li><a href="/tianshui/">天水</a ></li>
+                                            <li><a href="/?domain=tongchuan">铜川</a ></li>
+                                            <li><a href="/?domain=tonghua">通化</a ></li>
+                                            <li><a href="/tongling/">铜陵</a ></li>
+                                            <li><a href="/wanning/">万宁</a ></li>
+                                            <li><a href="/wenchang/">文昌</a ></li>
+                                            <li><a href="/?domain=wuhai">乌海</a ></li>
+                                            <li><a href="/?domain=wuyi">武威</a ></li>
+                                            <li><a href="/wuzhong/">吴忠</a ></li>
+                                            <li><a href="/?domain=xiangtan">湘潭</a ></li>
+                                            <li><a href="/xianning/">咸宁</a ></li>
+                                            <li><a href="/?domain=xingtai">邢台</a ></li>
+                                            <li><a href="/?domain=xini">悉尼</a ></li>
+                                            <li><a href="/?domain=xinyang">信阳</a ></li>
+                                            <li><a href="/?domain=xinyu">新余</a ></li>
+                                            <li><a href="/?domain=xc">宣城</a ></li>
+                                            <li><a href="/?domain=yanan">延安</a ></li>
+                                            <li><a href="/ycs/">盐城</a ></li>
+                                            <li><a href="/?domain=yangjiang">阳江</a ></li>
+                                            <li><a href="/?domain=yangquan">阳泉</a ></li>
+                                            <li><a href="/?domain=yingtan">鹰潭</a ></li>
+                                            <li><a href="/?domain=yiyang">益阳</a ></li>
+                                            <li><a href="/yzh/">永州</a ></li>
+                                            <li><a href="/?domain=yy">岳阳</a ></li>
+                                            <li><a href="/?domain=yulin">榆林</a ></li>
+                                            <li><a href="/?domain=yulin2">玉林</a ></li>
+                                            <li><a href="/?domain=yunfu">云浮</a ></li>
+                                            <li><a href="/zzzzz/">海西蒙古族藏族自治州</a ></li>
+                                            <li><a href="/zjg/">忻州</a ></li>
+                                            <li><a href="/zhangjiajie/">张家界</a ></li>
+                                            <li><a href="/zhangye/">张掖</a ></li>
+                                            <li><a href="/zhangzhou/">漳州</a ></li>
+                                            <li><a href="/zzs/">株洲</a ></li>
+                                            <li><a href="/?domain=ziyang">资阳</a ></li>
+                                            <li><a href="/?domain=zy">遵义</a ></li>
+                                            <li><a href="/?domain=SGP">新加坡</a ></li>
+                                            <li><a href="/?domain=kul">吉隆坡</a ></li>
+                </ul>
+            </div>
+
+            <ul class="l hed-ul">
+                <li><a href="/" class="older hed-on">首页</a></li>
+                <li class="mar-r dh-fl">
+                <a href="/yanchanghui/" class="older">全部演出
+                <span class="r hed-sj ico"></span></a>
+												<!-- 全部演出下拉列表 -->
+												<span class="dh-xl xl-xs xl-xs-1">    
+												<!-- 鼠标移入显示 -->
+													<a href="/yanchanghui/" target="_blank">
+														<span class="dh-xl-xl">
+															<span class="xl xl-1 ico perform1"></span>
+															<span class="xl-r">演唱会</span>
+														</span>
+													</a>
+													<a href="/yinyuehui/" target="_blank">
+														<span class="dh-xl-xl">
+															<span class="xl xl-1 ico concert1"></span>
+															<span class="xl-r">音乐会</span>
+														</span>
+													</a>
+													<a href="/huajugeju/" target="_blank">
+                            <span class="dh-xl-xl">
+                                <span class="xl xl-1 ico drama1"></span>
+                                <span class="xl-r">话剧歌剧</span>
+                            </span>
+													</a>
+													<a href="/wudaobalei/" target="_blank">
+                            <span class="dh-xl-xl">
+																<span class="xl xl-1 ico dance1"></span>
+																<span class="xl-r">舞蹈芭蕾</span>
+														</span>
+													</a>
+												<a href="/quyuanzatan/" target="_blank">
+                                <span class="dh-xl-xl">
+                                <span class="xl xl-1 ico qy1"></span>
+                                <span class="xl-r">曲苑杂坛</span>
+                            </span>
+                </a>
+                </a>
+                <a href="/dujiaxiuxian/" target="_blank">
+                                <span class="dh-xl-xl">
+                                <span class="xl xl-1 ico holiday1"></span>
+                                <span class="xl-r">度假休闲</span>
+                            </span>
+                </a>
+                </span>
+                </li>
+                <li class="mar-r">
+                      <a href="/tiyusaishi/" class="older">
+                            体育赛事
+                      <span class="r hed-sj"></span></a>
+                </li>
+                <!--<li class="mar-r">
+                        <a href="/ticket/ic/" class="older">
+                            娱乐资讯
+                            <span class="r hed-sj"></span></a>
+                </li>-->
+                <li class="ul-xz">
+                    <a href="javascript:;" class="older">APP下载
+                        <span class="r hed-sj ico"></span></a>  <!-- 小三角 -->
+                    <!-- APP下载下拉 -->
+                    <span class="xz-xl xl-xs-1">    <!-- 鼠标移入显示 -->
+                        <span class="ico xl-xs"></span>
+                        <span class="xz-wenzi">下载有票APP<br>领取新人红包</span>
+                    </span>
+                </li>
+            </ul>
+
+            <!-- 右侧输入框 -->
+            <div class="r hed-su" onkeydown="keyLogin3(event)">
+                <form id="key-search" action="/list/" method="get" role="form">
+								<input type="text" name="keyword" placeholder="输入演出、艺人、场馆名称..." class="l su-ipt"> 
+								<!-- 搜索框 -->
+                <i class="iconfont su-tb" onclick="sosuo()">&#xe604;</i>
+                </form>       
+								<div class="wode-dongxi">
+                    <ul class="wd-dz">
+                        <i class="iconfont i-ico coF mar10">&#xe61e;</i>
+                        <li><a href="/user/login/?re_url=%2Fuser%2Flogin%2F%3Fre_url%3D%252Forder%252F%253Ft_id%253DMtjiAdxMzYyNw_a_a%2526e_id%253DNeziMdxNjY_a%2526s_id%253DMsjiUdwNDc4%2526n%253D2">登录</a ></li>
+                        <li class="wd-dz-bor"></li>
+                        <li><a href="/user/register/?re_url=%2Fuser%2Flogin%2F%3Fre_url%3D%252Forder%252F%253Ft_id%253DMtjiAdxMzYyNw_a_a%2526e_id%253DNeziMdxNjY_a%2526s_id%253DMsjiUdwNDc4%2526n%253D2">注册</a ></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <div class="Baiban"></div><div class="Bg">
+    <div class="Bg-w w">
+        <div class="dengluzhuce dengluzhuce1">
+            <div class="tanchuang-dz">
+                <div class="DengluZhuce"><!-- 登录注册 -->
+                    <ul class="dz-xuanze">
+                        <li>
+                            <a href="javascript:;" class="a-on">登录</a >
+                            <a href="/user/register/?re_url=%2Forder%2F%3Ft_id%3DMtjiAdxMzYyNw_a_a%26e_id%3DNeziMdxNjY_a%26s_id%3DMsjiUdwNDc4%26n%3D2"  onclick="xuanzixn(this)">注册</a >
+                        </li>
+                    </ul>
+                    <form id="login" action="/user/login/?re_url=%2Forder%2F%3Ft_id%3DMtjiAdxMzYyNw_a_a%26e_id%3DNeziMdxNjY_a%26s_id%3DMsjiUdwNDc4%26n%3D2" method="post" role="form">
+<input type="hidden" name="_csrf" value="UXJuZ3haR0k2ClsjQGIADjw3NxUXYjY.OhUjNx4rJiQ.MTYAGykTIA==">                    <div class="dz-input input-denglu"">
+                        <div class="tanchuang-tishi"></div>
+                        <input name="mobile" type="text" class="dz-ipu dz-ipu-sj" maxlength="11" placeholder="请输入手机号" value="" />
+                        <input name="password" type="password" class="dz-ipu dz-ipu-mima" placeholder="请输入密码" />
+                        <input type="submit" class="dz-denglu dz-denglu1" value="立即登录" />
+                        <a href="/user/register-pwd/?re_url=%2Forder%2F%3Ft_id%3DMtjiAdxMzYyNw_a_a%26e_id%3DNeziMdxNjY_a%26s_id%3DMsjiUdwNDc4%26n%3D2">
+                        <p class="r DengLu" onclick="bb2()">忘记密码</p >
+                        </a>
+                    </div>
+                   </form>
+
+									</div>
+            </div>
+        </div>
+    </div>
+</div>
+<input  type="hidden" id="url" value="/order/?t_id=MtjiAdxMzYyNw_a_a&e_id=NeziMdxNjY_a&s_id=MsjiUdwNDc4&n=2">
+
+<div class="recommendation">
+    <ul>
+        <li class="title">热门推荐：</li>
+                <li><a href="/e_%E5%88%98%E5%BE%B7%E5%8D%8E/" title="刘德华演唱会门票">刘德华演唱会门票</a></li>
+                <li><a href="/e_%E6%9E%97%E4%BF%8A%E6%9D%B0/" title="林俊杰演唱会门票">林俊杰演唱会门票</a></li>
+                <li><a href="/e_%E5%91%A8%E6%9D%B0%E4%BC%A6/" title="周杰伦演唱会门票">周杰伦演唱会门票</a></li>
+                <li><a href="/list/?keyword=%E5%BC%A0%E4%BA%91%E9%9B%B7%C2%B7%E6%9D%A8%E4%B9%9D%E9%83%8E" title="张云雷·杨九郎相声门票">张云雷·杨九郎相声门票</a></li>
+                <li><a href="/e_TFBOYS/" title="TFBOYS演唱会门票">TFBOYS演唱会门票</a></li>
+                <li><a href="/e_%E5%BC%A0%E6%9D%B0/" title="张杰演唱会门票">张杰演唱会门票</a></li>
+                <li><a href="/e_%E5%BC%A0%E8%89%BA%E5%85%B4/" title="张艺兴演唱会门票">张艺兴演唱会门票</a></li>
+                <li><a href="/e_%E9%83%91%E7%A7%80%E6%96%87/" title="郑秀文演唱会门票">郑秀文演唱会门票</a></li>
+                <li><a href="/e_%E8%AE%B8%E5%B5%A9/" title="许嵩演唱会门票">许嵩演唱会门票</a></li>
+                <li><a href="/e_%E6%9E%97%E5%AE%A5%E5%98%89/" title="林宥嘉演唱会门票">林宥嘉演唱会门票</a></li>
+                <li><a href="/e_%E5%8D%8E%E6%99%A8%E5%AE%87/" title="华晨宇演唱会门票">华晨宇演唱会门票</a></li>
+                <li><a href="/e_%E8%B0%AD%E5%92%8F%E9%BA%9F/" title="谭咏麟演唱会门票">谭咏麟演唱会门票</a></li>
+                <li><a href="/e_%E6%9D%8E%E5%AE%97%E7%9B%9B/" title="李宗盛演唱会门票">李宗盛演唱会门票</a></li>
+                <li><a href="/e_%E5%AE%B9%E7%A5%96%E5%84%BF/" title="容祖儿演唱会门票">容祖儿演唱会门票</a></li>
+                <li><a href="/e_%E6%9D%8E%E8%8D%A3%E6%B5%A9/" title="李荣浩演唱会门票">李荣浩演唱会门票</a></li>
+                <li><a href="/e_%E5%AD%9F%E9%B9%A4%E5%A0%82/" title="孟鹤堂演唱会门票">孟鹤堂演唱会门票</a></li>
+                <li><a href="/e_%E9%83%AD%E5%BE%B7%E7%BA%B2/" title="郭德纲演唱会门票">郭德纲演唱会门票</a></li>
+                <li><a href="/e_%E6%9B%B9%E4%BA%91%E9%87%91/" title="曹云金相声门票">曹云金相声门票</a></li>
+                <li><a href="/e_%E6%B1%AA%E8%8B%8F%E6%B3%B7/" title="汪苏泷演唱会门票">汪苏泷演唱会门票</a></li>
+                <li><a href="/e_%E4%BB%BB%E8%B4%A4%E9%BD%90/" title="任贤齐演唱会门票">任贤齐演唱会门票</a></li>
+                <li><a href="/e_%E6%9D%A8%E5%8D%83%E5%AC%85/" title="杨千嬅演唱会门票">杨千嬅演唱会门票</a></li>
+                <li><a href="/e_%E8%8E%AB%E6%96%87%E8%94%9A/" title="莫文蔚演唱会门票">莫文蔚演唱会门票</a></li>
+                <li><a href="/e_%E7%94%B0%E9%A6%A5%E7%94%84/" title="田馥甄演唱会门票">田馥甄演唱会门票</a></li>
+                <li><a href="/e_%E4%B9%90%E5%8D%93%E7%88%B1/" title="乐卓爱展会门票">乐卓爱展会门票</a></li>
+                <li><a href="/list/?keyword=SHAWN+MENDES" title="SHAWN MENDES演唱会门票">SHAWN MENDES演唱会门票</a></li>
+                <li><a href="/e_%E5%AD%99%E8%8E%89/" title="孙莉演唱会门票">孙莉演唱会门票</a></li>
+                <li><a href="/e_%E8%AE%B8%E5%B7%8D/" title="许巍演唱会门票">许巍演唱会门票</a></li>
+                <li><a href="/e_%E5%BC%A0%E4%BF%A1%E5%93%B2/" title="张信哲演唱会门票">张信哲演唱会门票</a></li>
+   </ul>
+</div>
+<div class="footer_bom">
+    <div class="footer_tit">合作伙伴：</div>
+    <div class="footer_bomr">
+        <span class="ico"></span>
+        <span class="ico"></span>
+        <span class="ico"></span>
+        <span class="ico"></span>
+        <span class="ico"></span>
+        <span class="ico"></span>
+        <span class="ico"></span>
+        <span class="ico"></span>
+    </div>
+</div>
+<div class="my">
+    <div class="my-w">
+        <!-- 头部图片 -->
+        <div class="my-top w">
+            <div class="l top-div">
+                <i class="iconfont mar10 i-ico coE">&#xe69c;</i>
+                <i class="l coE">100%真票,&nbsp;&nbsp;购票无忧</i>
+            </div>
+            <div class="l top-div">
+                <i class="iconfont mar10 i-ico coF">&#xe601;</i>
+                <i class="l coF">担保交易,&nbsp;&nbsp;放心付款</i>
+            </div>
+            <div class="l top-div bod-r">
+                <i class="iconfont mar10 i-ico co6">&#xe6b8;</i>
+                <i class="l co6">安心购票,&nbsp;&nbsp;无票赔付</i>
+            </div>
+        </div>
+        <div class="my-c">
+            <div class="w c-w">
+                <div class="c-l l">
+                    <div><a href="/article/about/">关于我们</a></div>
+                    <div><a href="/article/faq/">常见问题</a></div>
+                    <div><a href="/article/contact/">联系我们</a></div>
+                    <div><a href="/article/feedback/">问题反馈</a></div>
+                </div>
+                <div class="c-r l">
+                    <div>
+                        <i class="tcblock"></i>
+                        <span><i class="iconfont c-rbg">&#xe628;</i><i class="bototm"></i></span>
+                        <i class="iconfont c-rtb">&#xe61f;</i>
+                    </div>
+                    <div>
+                        <i class="tcblock"></i>
+                        <span><i class="iconfont c-rbg">&#xe626;</i><i class="bototm"></i></span>
+                        <i class="iconfont c-rtb">&#xe623;</i>
+                    </div>
+                    <div>
+                        <i class="tcblock"></i>
+                        <span><i class="iconfont c-rbg">&#xe627;</i><i class="bototm"></i></span>
+                        <i class="iconfont c-rtb">&#xe624;</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 底部 -->
+<footer>
+    <span href="###" class="fot-a">北京有票科技有限公司  Copyright © 2015 - 2018 All rights reserved.&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;京ICP备15041183号-1&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;ICP证 京B2-20180265&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;客服热线:400-080-9208</span>
+    <div class="footer_boml">
+    	<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502034007" style="display:block;text-decoration:none;height:20px;line-height:20px;"><img src="https://images.ypiao.com/static/img/beian.png"" style="float:left;margin-right: 10px;"/><p style="float:left;height:20px;line-height:20px;color:#939393;">京公网安备 11010502034007号</p></a>
+<!--        <span style="height:20px; margin: 0 10px;line-height: 21px;">|</span>-->
+<!--        <a target="_blank" href="http://www.bjwh.gov.cn/lic.jsp?zz=4610301302957294-11-20170915" style="display:block;text-decoration:none;height:20px;line-height:20px;"><p style="color: #939393;">营业性演出许可证 京演(机构)〔2017〕3425号</p></a>-->
+    </div>
+</footer>
+    <input  type="hidden" id="user_id" value="0"/>
+    <!-- 底部 -->
+<script>
+//    function sosuo(){
+//        var name = $('.su-ipt').val();
+//        if(name) {
+//            $('#key-search').submit();
+//        } else{
+//            $('.TANcHUAG').fadeIn(300).delay(5000).fadeOut(400);
+//            $('.TANcHUAG').find('.allTan').text('请输入您要查询的内容。');
+//            return;
+//        }
+////    AjaxKeyWord(keyword);
+//    }
+    function logout(){
+        window.location.href="/user/pc-logout/";
+        $('.TANcHUAG').fadeIn(300).delay(5000).fadeOut(400);
+        $('.TANcHUAG').find('.allTan').text('退出成功');
+    };
+
+
+//    $('.su-wd').hover(function(){
+//        $('.wd-tanchuang2').show();
+//    },function(){
+//        $('.wd-tanchuang2').hide();
+//    });
+
+//
+//    // 地址弹窗显示隐藏
+//    $('.hed-cshi').hover(function() {
+//        $('.cshi-liebiao').show()
+//    }, function() {
+//        $('.cshi-liebiao').hide()
+//    });
+//    // 地址弹窗显示隐藏
+//    $('.hed-cshi').hover(function() {
+//        $('.chengshi').show()
+//    }, function() {
+//        $('.chengshi').hide()
+//    });
+//
+//    // 底部弹窗
+//    $('.c-r-ico2').hover(function(){
+//        $('.ico2-tc,.ico2-sj').stop().fadeIn(300);
+//    },function(){
+//        $('.ico2-tc,.ico2-sj').stop().fadeOut(300);
+//    });
+//    $('.c-r-ico3').hover(function(){
+//        $('.ico2-tc1,.ico2-sj1').stop().fadeIn(300);
+//    },function(){
+//        $('.ico2-tc1,.ico2-sj1').stop().fadeOut(300);
+//    });
+</script>
+<script src="https://images.ypiao.com/static/js/jquery.min.js"></script>
+<script src="https://images.ypiao.com/static/js/common.js"></script>
+<script type="text/javascript">    // 地址弹窗显示隐藏
+    $('.hed-cshi').hover(function() {
+        $('.cshi-liebiao').show()
+    }, function() {
+        $('.cshi-liebiao').hide()
+    });
+    // 地址弹窗显示隐藏
+    $('.hed-cshi').hover(function() {
+        $('.chengshi').show()
+    }, function() {
+        $('.chengshi').hide()
+    });
+
+    // 底部二维码弹窗
+    $('.tcblock').hover(function(){
+        $(this).next().css('opacity','1')
+    },function(){
+        $(this).next().css('opacity','0')
+    })
+a
+    // 底部弹窗
+    $('.c-r-ico2').hover(function(){
+        $('.ico2-tc,.ico2-sj').stop().fadeIn(300);
+    },function(){
+        $('.ico2-tc,.ico2-sj').stop().fadeOut(300);
+    });
+    $('.c-r-ico3').hover(function(){
+        $('.ico2-tc1,.ico2-sj1').stop().fadeIn(300);
+    },function(){
+        $('.ico2-tc1,.ico2-sj1').stop().fadeOut(300);
+    });
+        function sosuo(){
+        var name = $('.su-ipt').val();
+        if(name) {
+            $('#key-search').submit();
+        } else{
+            $('.TANcHUAG').fadeIn(300).delay(5000).fadeOut(400);
+            $('.TANcHUAG').find('.allTan').text('请输入您要查询的内容。');
+            return;
+        }
+//    AjaxKeyWord(keyword);
+    }</script>
+<script type="text/javascript">jQuery(document).ready(function () {
+    var message = "";
+    if(message != ''){
+        $('.TANcHUAG').stop(true).fadeIn(300).delay(5000).fadeOut(400);
+        $('.TANcHUAG').find('.allTan').text(message);
+    }
+});</script>        <script type='text/javascript' src='https://webchat.7moor.com/javascripts/7moorInit.js?accessId=8e52df90-e25a-11e8-b0dd-ebdd6ba41fda&autoShow=true&language=ZHCN' async='async'>
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?eeb3e1a918d23d97aa82d5b846504815";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+</html>

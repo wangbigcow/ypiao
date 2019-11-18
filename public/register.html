@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+     <title>会员注册-有票网</title>
+     <link rel="stylesheet" href="./css/common.css">    
+	 <link rel="stylesheet" href="./css/login.css">
+ </head>
+ <body>
+ <header class="hed"></header>
+
+    <div class="Baiban"></div>
+    <div class="Bg">
+    <div class="Bg-w w">
+        <div class="dengluzhuce dengluzhuce1">
+            <div class="tanchuang-dz">
+                <div class="DengluZhuce"><!-- 登录注册 -->
+                    <ul class="dz-xuanze">
+                        <li>
+                            <a href="login.html" >登录</a >
+                            <a href="javascript:;" class="a-on">注册</a >
+                        </li>
+                    </ul>
+										<form id="register">
+												<div class="dz-input input-zhuce">
+														<div class="dz-zc-1 dz-zc l">
+                                                            <input id="phone" type="text" class="dz-ipu dz-ipu-sj" maxlength="11" placeholder="请输入手机号">
+                                                            <span class="l" style="color: red;display: none"></span>
+                                                        </div>
+                                                        <div class="dz-zc-2 dz-zc l ">
+                                                        <input id="upwd" type="password" class="dz-ipu dz-ipu-mima dz-zc" placeholder="请输入密码">
+                                                        <span style="color: red;display: none"></span>
+                                                    </div>
+                                                        <div class="dz-zc-3 dz-zc l ">
+                                                            <input id="cupwd" type="password" class="dz-ipu dz-ipu-mima dz-zc" placeholder="请再次输入密码" />
+                                                            <span style="color: red;display: none"></span>
+                                                        </div>
+                                                        <div class="nickname l">
+                                                             <div class="dz-zc-4 dz-zc">
+                                                                <input id="user_name" type="text" class="dz-ipu nik-l l-changcilb-on" placeholder="姓氏">
+                                                            </div>
+                                                            <div class="gender">
+                                                                <input id="male" type="radio" name="gender"  value="1" style="display: none;"><label class="lab1" for="male" style="color:#7f8c8d">先生</label>
+                                                                <input id="female" type="radio" name="gender"  value="0" style="display: none"><label class="lab2" for="female" style="color:#7f8c8d" >女士</label>
+                                                            </div>
+                                                            <span class="l span1" style="color: red; display: none; font-size: 12px;"></span>
+                                                            <span class="l span2" style="color: red; display: none; font-size: 12px;"></span>
+                                                        </div>
+                                                        <div class="yanzhnegma">
+                                                                <div class="dz-zc-5 dz-zc l ">
+                                                                <input id="yanzhengma" type="text" class="dz-ipu dz-ipu-yzm-l" placeholder="请输入验证码" /></div>
+                                                                <span id="reflashCode" class="dz-ipu dz-ipu-yzm-r">
+                                                                    <input id="zc-yzm-cc" type="text" value="" style="display: none">
+                                                                    <canvas id="canvas">
+                                                                    </canvas>
+                                                                </span> 
+                                                                <span class="yzm-msg l" style="color: red; width:100%; display: none"></span>   
+                                                                
+                                                        </div>
+                                                        
+                                                        
+                                                        <input id="reg_btn" class="dz-zhuce" value="注册" readonly style="color: #fff !important;">
+														
+														
+												</div>
+										</form>                
+								</div>
+            </div>
+        </div>
+    </div>
+	</div>
+
+    <div class="kf-fix">
+            <a href="shopcart.html">
+                <i class="iconfont">&#xe668;</i>
+            </a>
+    </div>
+ <!--底部  -->
+ <footer></footer>
+ <script src="./js/staticjs/jquery-1.7.min.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/header.js"></script>
+<script src="./js/footer.js"></script>
+<script src="./js/yzm.js"></script>
+<script src="./js/log_reg.js"></script>
+
+
+
+ 
+ </body>
+</html>

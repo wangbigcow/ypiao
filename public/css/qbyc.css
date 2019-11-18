@@ -1,0 +1,195 @@
+/*/////////全部演出///////////////*/
+.all-xmu{
+    min-height: 1575px;
+    padding-bottom: 30px;
+    overflow: hidden;
+}
+.xmu-l{
+    width: 875px;
+    height: 100%;
+
+}
+
+.l-leibie{
+    width: 100%;
+    padding-top: 20px;
+    background-color: #fff;
+    border: 1px solid #e2e5e6;
+}
+.l-leibie ul{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.l-leibie ul li{
+    float: left;
+    margin-left: 20px;
+    border-radius: 13px;
+    font-size: 14px;
+    color: #858586;
+}
+.l-leibie ul li a{
+    padding: 5px 10px;
+    color: #2d3e4f;
+}
+.leibie-on{
+    background-color: #f60;
+    border-radius: 24px;
+    color: #fff !important;
+}
+.l-jieguo{
+    width: 100%;
+    min-height: 1280px;
+    background-color: #fff;
+    border: 1px solid #e2e5e6;
+    padding-bottom: 60px;
+    overflow: hidden;
+
+    position: relative;
+    margin-top: 23px;
+}
+.jieguo-top{
+
+    height: 48px;
+    line-height: 48px;
+    border-bottom: 1px solid #e2e5e6;
+    margin: 0 20px 20px;
+    overflow: hidden;
+    list-style: none;
+}
+
+
+.jieguo-top  .jg-top-l{
+    float: left;
+
+    border-radius: 13px;
+    font-size: 14px;
+    color: #858586;
+}
+.jieguo-top .jg-top-l a{
+    position: relative;
+
+    font-size:12px;
+
+    padding: 5px 10px;
+    color: #2d3e4f;
+}
+.jieguo-top-r{
+    margin-right:20px;
+}
+
+
+
+.jieguo-xm{
+
+    height: 226px;
+    border: 1px solid #e2e5e6;
+
+
+    margin: 10px 20px;
+    padding: 15px;
+}
+.jieguo-xm img{
+    display: block;
+    width: 144px;
+    height: 193px;
+    margin-right: 14px;
+}
+.jieguo-xm .xm-l{
+    width: 50%;
+    height: 193px;
+}
+.jieguo-xm .xm-l a{
+    height: 100px;
+    display: block;
+    margin-bottom: 25px;
+    font-size: 19px;
+    color: #2d3e4f;
+}
+.jieguo-xm .xm-l a.xm-zkp{
+    height: 80px;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 19px;
+    color: #2d3e4f;
+}
+
+.jieguo-xm .xm-l span{
+    display: block;
+    width: 100%;
+    line-height: 35px;
+    font-size: 14px;
+    color: #7f8c8d;
+
+}
+.cc-xm-zk{
+	width: 80px;
+    height: 31px;
+    line-height: 31px;
+    text-align: center;
+    font-size: 19px;
+    color: #FF7583;
+    background-color: #fff;
+    border: 1px solid #FF7583;
+    border-radius: 3px;
+    
+}
+.jieguo-xm .xm-r{
+    width: 20%;
+    height: 100%;
+    font-size: 20px;
+    position: relative;
+}
+.jieguo-xm .xm-r span{
+    display: block;
+    width: 25%;
+
+    font-size: 20px;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+
+
+.jieguo-xm .xm-r a {
+    display: block;
+    width: 117px;
+    height: 41px;
+    line-height: 41px;
+    text-align: center;
+    margin-right: -10px;
+    border-radius: 5px;
+    border: 0;
+    font-size: 17px;
+    color: #fff;
+    background-color: #ff5219;
+}
+
+.xmu-r{
+    width: 298px;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

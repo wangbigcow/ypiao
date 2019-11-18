@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .top{
+            z-index:888;
+            
+        }
+        .top-img{
+            /* background-color:#eee;  */
+            z-index:888;
+            /* z-index:0; */
+        }
+        .dj ul{
+            z-index: 1000;
+        }
+        .top_ul {
+            width:100px;
+            z-index:1000;
+        }
+        .top_ul a.dj{
+            width:100px;
+            height:60px;
+            background-color:#fff;
+            display: block;
+            z-index:1000;
+        }
+        .top_ul a.dj:hover+ul{
+            z-index:2000;
+            background-color:#0ff !important;
+            opacity: 1;
+        }
+        .top_ul ul{
+            width:100px;
+            height:100px;
+            background-color:#0ff;
+            z-index:1500;
+            opacity: 1;
+        }
+        .top_ul ul li{
+            width:50px;
+            height:30px;
+            background-color:#0ff;
+            z-index:1500;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="top" style="width:100%; height:60px; background-color:red;">
+        <div class="top_ul">
+            <a class="dj">标题</a>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                
+            </ul>
+
+        </div>
+
+    </div>
+    <div class="top-img" style="width:100%; height:600px; ">
+        <!-- <img src="../public/img/index/lbt1.jpg" style="z-index:888;"> -->
+
+    </div>
+    <!-- <ul id="ls">
+
+    </ul> -->
+    <script>   
+    ////////////////////////////////////////////////// 
+            var arr=["凉凉","冉冉","东东","燕儿"];
+            for(var i=0;i<arr.length;i++){
+                console.log(arr[i]);
+            }
+            arr.forEach(elem=>console.log(elem+"到"))
+            for(var ename of arr){
+                console.log(ename+"-到!");
+            }
+
+            var result={};
+            var str="helloworld";
+            for(var char of str){
+                if(result[char]===undefined)
+                {
+                    result[char]=1;
+                }
+                else{
+                    result[char]+=1;
+                }
+            }
+            console.log(result);
+
+
+
+
+            /////////////////////////////////////////////////////////////
+
+            function add(){
+                var sum=0;
+                for(var val of arguments){
+                    sum+=val;
+                }
+            console.log(sum);
+            }
+            console.log(add(1,3,5,7,9));
+
+            function add1(...arr1){
+                var sum=arr1.reduce((prev,elem)=>prev+elem,0);
+                console.log(`add1求的和是${sum}`);
+            }
+            //////////////////////////////////////////////////
+            //参数增强 参数默认值（default） 剩余参数（reset） 打散数组（spread）
+
+            function indexOf(arr,elem,fromi=0){//只能解决最后一个形式参数不确定的情况
+                var i=fromi;
+                for(i;i<arr.length;i++){
+                    if(elem===arr[i]){
+                        return i;
+                    }
+                }
+                return -1;
+                
+            };
+            console.log(indexOf(str,"e",0));
+
+            //剩余参数（rest语法） 代替arguments
+            //问题 1.不是纯正的数组类型 
+            //    2.不支持箭头函数 
+            //rest 在定义函数时 
+            function calc(ename,...arr0){ 
+                var  sum=0;
+                console.log(`${ename}的总工资是：${arr0.reduce((prev,elem)=>prev+elem,0)}`)
+
+            }
+            calc("lilei",100,200,300);
+            //spread
+            var arr2=[2,5,7,1];
+            var arr3=[4,5,6];
+            console.log(Math.max(...arr2));
+            console.log(Math.min(...arr2));
+            var arr4=[...arr2,...arr3];//拼接数组
+            console.log(arr4);
+            var obj1={x:"1",y:2,z:3};
+            var obj2 = {a:1,b:"b",c:"c"};
+            var obj3={...obj1,...obj2};
+            console.log(obj3);
+           //解构destruct   构造 construct
+           var date = [2019,8,5];
+           var [c,m,d]=date;
+           console.log();
+           //不声明第三个变量，交换两个变量中的值，共有集】几种方法
+           //1，
+           var a=3;
+           var b=5;
+           [a,b]=[b,a];
+           console.log(a,b);
+           a=[b,b=a][0];
+           console.log(a,b);
+           a+=b;b=a-b;a-=b;
+           console.log(a,b);
+           a^=b;b^=a;a^=b;
+           console.log(a,b);
+           /////////////////////////////////////////////////////
+           //击落一架敌机
+           class Enemy{
+               constructor(x,y){
+                   this.x=x;
+                   this.y=y;
+               }
+               fly(){
+                   console.log("fly");
+               }
+           }
+           class San extends Enemy{
+               constructor(x,y,award){
+                   super(x,y)
+                   this.award=award;
+               }
+               getaward(){}
+           }
+           class Plane extends Enemy{
+               constructor(x,y,score){
+                   super(x,y)
+                   this.score=score;
+               }
+           }
+           var san=new San(1,1,1);
+           var plane=new Plane(2,2,2);
+           console.log(san.x,san.y)
+           console.log(plane.x,plane.y)
+           san.fly();
+           plane.fly();
+
+           
+           ////////////////////////////////////////////////////
+           //es6 防止回调地狱
+
+
+            
+        
+        
+    </script>
+    
+</body>
+</html>

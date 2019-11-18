@@ -1,0 +1,335 @@
+/*侧边小图标*/
+.gwc-fix{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    background-color:rgba(0,0,0,.2);
+    color: #fff;
+    position: fixed;
+    right: 40px;
+    bottom:120px;
+    z-index: 999; 
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(0,0,0,.2);
+}
+.gwc-fix:hover{
+   background-color: #ff6633;
+   
+}
+.gwc-fix a{
+    color: #fff;
+}
+.gwc-fix i.iconfont{
+    
+    font-size: 25px;
+}
+.gwc-fix span.gwc-numb{
+    position: absolute;
+    top:-3px;
+    right: -3px;
+
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    line-height: 16px;
+    
+    border-radius: 50%;
+    background-color:red;
+    
+}
+.kf-fix{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    background-color:rgba(243, 114, 29, 0.2);
+    position: fixed;
+    right: 40px;
+    bottom:63px; 
+    z-index: 999;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(243, 114, 29, 0.2);
+}
+.kf-fix:hover{
+    background-color: #ff6633;
+}
+.kf-fix a{
+    color: #fff;
+}
+.kf-fix i.iconfont{
+    
+    font-size: 25px;
+}
+/* �Ƽ� */
+
+footer {
+    background-color: #fafafa;
+    border-top: 1px solid #E5E5E5;
+    
+    line-height: 55px;
+    text-align: center;
+    width: 100%;
+}
+.recommendation {
+    width: 1200px;
+    margin: 20px auto 0;
+    height:150px;
+    line-height: 35px;
+    font-size: 14px;
+    overflow: hidden;
+
+    position: relative;
+}
+.recommendation::after{
+    content: " ";
+    display: block;
+    clear: both;
+}
+.recommendation ul{
+    position: absolute;
+    top: 0;
+    left:0;
+
+}
+.recommendation li {
+    position: relative;
+    float: left;
+    padding: 0 10px;
+}
+.recommendation a {
+    font-size: 14px;
+    color: #BCBCBC;
+}
+
+
+.footer_bom {
+    text-align:center;
+}
+.footer_tit {
+    float:left;
+    margin:22px 0;
+    text-align:center;
+    margin-right: 12px;
+    font-weight: bold;
+    color: #939393;
+}
+.footer_bomr {
+    display: flex;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:center;
+
+}
+.ico {
+    background-image: url(../img/login/jl.png);
+}
+.footer_bomr span:first-child {
+    width: 84px;
+    height: 55px;
+    background-position: 0 -1762px;
+    margin-right: 20px;
+}
+.footer_bomr span:nth-child(2) {
+    width: 79px;
+    height: 55px;
+    background-position: 0 -1815px;
+    margin-right: 20px;
+}
+.footer_bomr span:nth-child(3) {
+    width: 86px;
+    height: 55px;
+    background-position: 0 -1867px;
+    margin-right: 20px;
+}
+.footer_bomr span:nth-child(4) {
+    width: 135px;
+    height: 55px;
+    background-position: 0 -1920px;
+    margin-right: 20px;
+}
+.footer_bomr span:nth-child(5) {
+    width: 143px;
+    height: 55px;
+    background-position: 0 -1971px;
+    margin-right: 20px;
+}
+.footer_bomr span:nth-child(7) {
+    width: 109px;
+    height: 55px;
+    background-position: 0 -2055px;
+    margin-right: 20px;
+}
+.footer_bomr span:nth-child(8) {
+    width: 109px;
+    height: 55px;
+    background-position: 0 -2100px;
+}
+
+/*�ײ�1111*/
+.my {
+    background-color: #fff;
+    border-top: 1px solid #e5e5e5;
+    position: relative;
+
+}
+.my-top {
+    height: 37px;
+    padding: 15px 0;
+    border-bottom: 1px solid #E9E9E9;
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: space-around;
+}
+.top-div {
+    float:left;
+    border-right: 1px solid #E9E9E9;
+    color: #7c7c7c;
+    font-size: 14px;
+    height:36px;
+    line-height: 36px;
+    padding-left: 100px;
+    text-align: center;
+    width: 400px;
+}
+.ml{
+    float: left;
+    width: 30px;
+    height: 30px;
+    background-position:0px -1000px;
+}
+.mc{
+    float: left;
+    width: 30px;
+    height: 30px;
+    background-position:0px -1040px;
+}
+.mr{
+    float: left;
+    width: 30px;
+    height: 30px;
+    background-position:0px -1073px;
+}
+
+
+
+.my-c{width:100%;}
+.my-c .c-w {
+    height: 80px;
+    padding: 15px 0;
+}
+.c-w .c-l {
+    float:left;
+    height: 100%;
+    padding-left: 100px;
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.c-w .c-l div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 30px;
+    background: rgba(255,238,233,1);
+    border-radius: 15px;
+    cursor: pointer;
+}
+.c-w .c-l div a {
+    font-size: 16px;
+    color: rgba(255,102,51,1);
+}
+.c-w .c-r{
+    float: right;
+    height: 100%;
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.b-wb{
+   display: block;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    background-position:0 -1116px;
+}
+.b-wx{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-position:0 -1160px;
+}
+.b-yp{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-position:0 -1205px;
+}
+
+
+/*footer*/
+
+
+.footer_boml {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+}
+
+
+
+button, input, select, textarea {
+    font-size: 100%;
+    outline: medium none;
+    resize: none;
+}
+
+body, button, input, select, textarea {
+    color: rgb(102, 102, 102);
+    font: 12px/1.5 "Microsoft YaHei", ΢���ź�, STHeiti, MingLiu;
+}
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, form, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+input {
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+}
+
+input, textarea, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+}
+
+input, textarea, select, button, meter, progress {
+    -webkit-writing-mode: horizontal-tb !important;
+}

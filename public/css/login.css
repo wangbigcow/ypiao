@@ -1,0 +1,265 @@
+
+/* 背景 */
+.Bg{
+    width: 100%;
+    background-color: #0c1031;
+    margin-top:75px;
+
+}
+.Bg-w{
+    height: 610px;
+    background-image: url(../img/login/bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+	min-width:1200px;
+    position: relative;
+}
+.dengluzhuce .dengluzhuce1{
+	
+    background-color: #ffffff;
+	width:366px;
+	border-radius: 3px;
+	text-align:center;
+	
+	
+}
+.tanchuang-dz {
+    float:right;
+	position:relative;
+    background-color:#ffffff;
+    border-radius: 3px;
+	right: 55px;
+    top: 115px;
+    min-height: 254px;
+    padding: 21px;
+   
+    width: 366px;
+   
+}
+
+.dz-xuanze {
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 22px;
+}
+.dz-xuanze li{
+    float: left;
+    width: 100%;
+    height: 40px;
+}
+.dz-xuanze li a {
+	float: left;
+	
+    border-right: 1px solid #e0e7eb;
+    color: #7f8c8d;
+	font-size: 17px;
+    display: block; 
+	text-align:center;
+	line-height:40px;
+}
+.dz-xuanze li a:first-child {
+    
+    width:182px;
+}
+.dz-xuanze li a:nth-child(2) {
+    
+    width: 182px;
+}
+.dz-xuanze li a:nth-child(2) {
+    border-right: 0 none;
+}
+
+.a-on {
+    color: #ff6633 !important;
+}
+
+.dz-ipu {
+    border: 1px solid #e0e7eb;
+    border-radius: 3px;
+    color: #7f8c8d;
+    font-size: 13px;
+    height: 40px;
+    margin-bottom: 15px;
+    /* margin-left: 8px; */
+    padding-left: 14px;
+    width: 350px;
+}
+.dz-denglu,.dz-zhuce {
+    width: 366px;
+     height: 40px;
+	text-align:center;
+	line-height:40px;
+
+    background-color: #ff6633;
+    border: 0 none;
+    border-radius: 3px;
+
+    color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+   
+    /* margin-left: 8px; */
+    
+    margin-bottom: 15px;
+    
+}
+#rememberUser{
+    display: none;
+}
+#rememberUser+label{
+    height: 16px;
+    line-height:16px;
+    font-size:13px;
+    cursor: pointer;
+    padding: 5px;
+    position: relative;
+
+}
+#rememberUser+label::before{
+    display: inline-block;
+    content: "";
+    width: 11px;
+    height: 11px;
+
+    line-height: 11px;
+    text-align: center;
+    border: 2px solid rgb(219, 219, 219);
+    background-color: #fff;
+    margin-right:5px;    
+}
+#rememberUser:checked+label::before{
+    content:url(../img/login/dxk.png);
+    border: none;
+    
+}
+
+.DengLu {
+    color: #ff6633;
+    font-size: 13px;
+}
+/*注册*/
+.yanzhengma{
+    float: left;
+    width: 100%;
+
+}
+.dz-ipu.dz-ipu-yzm-l{
+    width:220px;
+    
+    float: left;
+    
+
+}
+#canvas{
+    margin-left: -15px;
+    
+}
+.dz-ipu.dz-ipu-yzm-r{
+    width:120px;
+    float: left;
+    padding: 0;
+    cursor:pointer;
+    text-align: center;
+    color:#ff6633;
+    font-size:16px;
+    overflow: hidden;
+    margin-left: 3px;
+
+}
+
+.nickname{
+    width:100%;
+   min-height: 50px;
+    float:left;
+    font-size: 18px;
+    position: relative;
+}
+.dz-zc-4.dz-zc{
+  float: left;
+    width:233px;
+    height:50px;
+}
+.gender{
+   float: left;
+    width:130px;
+    height:50px;
+ 
+    box-sizing: border-box;
+}
+.nickname div.gender label.lab1{
+   float: left;
+    width:50px;
+    margin: 10px 0 0 10px;
+}
+.nickname div.gender label.lab2{
+  float: left;   
+    width:50px;   
+    margin: 10px 0 0 10px; 
+}
+.dz-ipu.nik-l{
+    width:217px;
+}
+div.nickname input:nth-child(2){
+    display: none;
+}
+#female{
+    display: none;
+}
+
+div.nickname label::before{
+    display: inline-block;
+    content: "";
+    width: 11px;
+    height: 11px;
+    line-height: 11px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid rgb(219, 219, 219);
+}
+div.nickname input:checked+label::before{
+    content: url(../img/login/xz.png);
+    border: none;
+}
+#yanzhnegma{
+    float: left;
+}
+
+/*//*/
+.dz-zc{
+    position: relative;
+}
+
+.dz-zc.on::after{
+    display: inline-block;
+    content:"\e612";
+    width:10px;
+    height:10px;
+    position: absolute;
+    top: 12px;
+    right:12px;
+    z-index: 9999;
+    color: #ff6633;
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

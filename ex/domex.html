@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dom</title>
+    <script>   
+    //1.查找触发事件的元素
+    //2.
+    //shopcart
+    var obj = {
+    name: 'a',
+    getName : function () {
+        console.log(this.name);
+        }
+    }
+
+    var fn = obj.getName
+    obj.getName()  //a
+    var fn2 = obj.getName()  //a
+    fn()
+    
+
+
+
+    </script>
+</head>
+<body>
+    <span>hello world</span>
+    <ul>
+        <li>{{count}}</li>
+        <li>综艺
+            <ul>
+                <li>{{total}}</li>
+                <li>爸爸</li>
+                <li>{{total}}</li>
+            </ul>
+        </li>
+        <li>{{count}}</li>
+    </ul>
+    <script>
+        var total=200;
+        var count=10;
+        //////遍历任何元素的子元素 
+        function getchildren(parent){
+            var children = parent.children;
+           
+            for(var child of children){
+                if(child.innerHTML=="{{count}}"){
+                    child.innerHTML=count;
+                }else if(child.innerHTML=="{{total}}"){
+                    child.innerHTML=total;
+                }
+
+                if(child.children.length>0){
+                    arguments.callee(child);
+                }
+                            
+                
+            }
+
+        }
+        getchildren(document.body);
+        
+    </script>
+    
+</body>
+</html>

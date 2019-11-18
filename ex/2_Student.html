@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+//封装
+class Student{
+  constructor(sname,sage){
+  this.sname=sname;
+  this.sage=sage;
+}
+
+intrSelf(){
+  console.log(`I'm ${this.sname}, I', ${this.sage}`)
+}
+
+run(){
+  console.log(`${this.sname} 开始奔跑...`)
+}
+}
+
+var lilei=new Student("Li Lei",11);
+var hmm=new Student("Han Meimei",12);
+
+console.log(lilei);
+console.log(hmm);
+lilei.intrSelf();
+lilei.run();
+hmm.intrSelf();
+hmm.run();
+
+
+
+function liang(){
+  return new Promise(
+    function(door){
+      console.log("liang run...");
+      setTimeout(function(){
+        console.log("1ok");
+        door();
+      },2000)
+    }
+  )
+}
+
+function ran(){
+  return new Promise(
+    function(door){
+      console.log("ran run");
+      setTimeout(function(){
+        console.log("2ok");
+        
+        door();
+      },2000)
+      
+    }
+  )
+}
+function dong(){
+  return new Promise(
+    function(door){
+      console.log("dong run");
+      setTimeout(function(){
+        console.log("3ok");
+        door();
+      },1000)
+    }
+  )
+}
+
+liang().then(ran).then(dong).then(()=>console.log("比赛结束"));
+
+</script>
+</body>
+</html>

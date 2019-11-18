@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图上下</title>
+    <style type="text/css">
+        .pic{
+            width: 98%;
+            height: 365px;
+            margin: 30px 1%;
+            position: relative;
+            overflow: hidden;
+        }
+        .content{
+            width: 98%;
+            height: 2500px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+ 
+        }
+        .content img{
+            
+            width: 1400px;
+            height:370px;
+            background-size: 100%;
+        }
+        .index{
+            position: absolute;
+            left: 45%;
+            bottom: 1px;
+
+            width: 60px;
+            height: 25px;
+            list-style: none;
+            padding: 0 10px;
+            
+            line-height: 25px;
+            text-align: center;
+            border-radius: 20px;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .index li{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            float: left;
+            margin: 10px 5px;
+            background-color: rgba(100,100,100,0.3);
+        }
+ 
+        .left,.right{
+            width: 50px;
+            height:80px;
+            background-color:rgba(100,100,100,0.5);  
+            position: absolute;
+            
+            line-height: 80px;
+            text-align: center;
+            font-size:30px;
+            color: #fff;
+            display: none;
+            cursor: pointer;
+        }
+        .left.l{
+            left: 50px;
+            top: 150px;
+        }
+       
+        .r.right{
+            right: 50px;
+            top: 150px;
+        }
+        .index .first{
+            background-color: red;
+        }
+ 
+    </style>
+    <script type="text/javascript" src="../public/js/staticjs/jquery-1.7.min.js"></script>
+</head>
+<body>
+    <div class="pic">
+        <div class="content">
+            <img src="../public/img/index/lbt1.jpg"/>
+            <img src="../public/img/index/lbt2.jpg"/>
+            <img src="../public/img/index/lbt3.jpg"/>
+            <img src="../public/img/index/lbt1.jpg"/>     
+        </div>
+        <ul class="index">
+            <li class="first"></li>
+            <li></li>
+            <li></li>  
+        </ul>
+        <div class="right r">></div>
+        <div class="left l"><</div>
+    </div>
+    <script type="text/javascript">
+       
+            //每个固定的时间移动图片
+            var timer = setInterval(picLoop,1000);
+            var index = 0;
+            var len=$(".content img").eq(0).height();
+            function picLoop(){
+                index++;          
+                $(".content").animate({"top":-len*index},300);
+                
+                if(index==3){
+                $(".content").animate({'top':0},0);
+                //同时给index+1跳过第一张图的再次加载
+                index=0;}
+                $("li").eq(index).css("background-color","red")
+                       .siblings().css("background-color","rgba(100,100,100,0.3)");
+            }
+           
+ 
+            //定时器的控制
+            $(".pic").hover(function(){
+                clearInterval(timer);
+                $(".left").show();
+                $(".right").show();
+            },function(){
+                timer = setInterval(picLoop,1000);
+                $(".left").hide();
+                $(".right").hide();
+            })
+ 
+            $("li").mouseover(function(){
+                $(this).css("background-color","red")
+                       .siblings().css("background-color","rgba(100,100,100,0.3)");
+                index = $(this).index();
+                $(".content").animate({"top":-len*index},300);
+ 
+            })
+ 
+            $(".left").click(function(){
+                index--;
+                if (index==-1) {
+                    index=3;
+                    $(".content").animate({"top":-len*index},0);
+                    index=2;
+                }
+                $(".content").animate({"top":-len*index},300);
+                $("li").eq(index).css("background-color","red")
+                       .siblings().css("background-color","rgba(100,100,100,0.3)");
+            })
+            $(".right").click(function(){
+                picLoop();
+            });
+        
+    
+    
+ 
+    
+    </script>
+</body>
+</html>

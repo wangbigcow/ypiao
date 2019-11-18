@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>boot模板</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+        #flash{
+            width: 1200px;
+            height: 365px;
+            position: relative;
+            margin: 0 auto;
+            border:1px solid black;
+            overflow: hidden;
+        }
+        #falsh img{
+            width: 1200px;
+            height: 365px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #flash ul{
+            position: absolute;
+            left: 45%;
+            bottom: 5%;
+
+            height: 30px;
+            padding-right: 20px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 20px;
+            background-color: rgba(0,0,0,0.5);
+        }
+        #flash ul li{
+            float: left;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #fff;
+            margin-left: 20px;
+            margin-top: 7px;
+        }
+        #flash ul .li_first{
+            background-color: #f40;
+        }
+        #flash .button{
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+            background-color:rgba(0,0,0,0.3);
+            cursor: pointer;
+        }
+        #flash .right{
+            position: absolute;
+            right: 10px;
+            top: 45%;
+        }
+        #flash .left{
+            position: absolute;
+            left: 10px;
+            top: 45%;
+        }
+        #flash .button span{
+            font-size: xx-large;
+            font-weight: 700;
+            line-height: 50px;
+            /*margin-left: 15px;*/
+            color: rgba(255,255,255,0.5);
+        }
+    </style>
+
+    <script src="../public/js/staticjs/jquery-1.7.min.js"></script>
+
+
+</head>
+<body>
+
+<div id="flash">
+
+    <img src="../public/img/index/lbt1.jpg" alt="">
+    <img src="../public/img/index/lbt2.jpg" alt="">
+    <img src="../public/img/index/lbt3.jpg" alt="">
+    <ul class="circle">
+        <li class="li_first"></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="button right"><span>></span></div>
+    <div class="button left"><span><</span></div>
+</div>
+<script>
+    var count = 0 ; //定义全局变量count来表示当前图片
+    function run(){
+        count++;
+        count = count ==3?0:count;
+        $('#flash img').eq(count).fadeIn(300).siblings('img').fadeOut(300); //利用eq来遍历img，并将count位图片显示，其他兄弟元素隐藏，fadeIN位淡入显示，fadeOut为淡出
+        $('#flash ul li').eq(count).css('background','#f40').siblings('li').css('background','#fff'); //同样利用遍历改变圆点的背景色
+    }
+    function reverserun(){
+        count--;
+        count = count == -1?2:count;
+        $('#flash img').eq(count).fadeIn(300).siblings('img').fadeOut(300);
+        $('#flash ul li').eq(count).css('background','#f40').siblings('li').css('background','#fff');
+    }
+
+    var timer = setInterval(run,2000); //设置定时器
+    $('#flash').hover(function(){ //设置鼠标移入移出事件
+        clearInterval(timer);
+    },function(){
+        timer = setInterval(run,2000);
+    })
+
+    $('#flash ul li').mouseenter(function(){ //设置移入圆点事件
+        count = $(this).index();
+        count = count ==3?0:count;
+        $('#flash img').eq(count).fadeIn(300).siblings('img').fadeOut(300);
+        $('#flash ul li').eq(count).css('background','#f40').siblings('li').css('background','#fff');
+    })
+    $('#flash .right').click(function(){ //设置右键按钮点击事件
+        run();
+    })
+    $('#flash .left').click(function(){ //设置左键按钮点击事件
+        reverserun();
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>es6</title>
+    <script>
+        let array=[4,4,4,3,4,1,2,2,3,3,3];
+        let set =new Set(array);
+        console.log(set);
+        console.log([...set]);
+
+        let arr = Array.from(new Set([ 2, 3, 2, 4,1, 1, 1]));
+        console.log(arr);
+        // => [1, 2, 3, 4]
+
+        for(let item of set.entries()){
+            console.log(item);
+        }
+
+        let obj={
+                a:1,
+                b:2
+            }
+            obj2={
+                a:1,
+                b:2
+            }
+            obj3={
+                a:1,
+                b:2
+            }
+            let jsonp=JSON.stringify(obj);
+            let objp=JSON.parse(jsonp);
+            console.log(jsonp);//true
+            console.log(objp);//true
+            console.log(JSON.stringify(obj)==JSON.stringify(obj3));//false
+
+        
+    
+    
+    
+    
+    </script>
+</head>
+<body>
+    <a href="" id="a1">123</a>
+<script>
+    console.dir(a1);
+</script>
+    
+</body>
+</html>

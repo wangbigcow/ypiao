@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- 导入jQuery -->
+        <script src="http://libs.baidu.com/jquery/1.3.2/jquery.min.js"></script>
+    </head>
+    <body>
+        
+        <div style="text-align: center;margin-top: 20%;">
+            
+            <!-- 省选择器 -->
+            <select id="province">
+            </select>
+            
+            <!-- 市选择器 -->
+            <select id="city">
+            </select>
+            
+            <!-- 区县选择器 -->
+            <select id="area">
+            </select>
+            
+            <button id="confirmBtn">确定</button>
+            
+        </div>
+        
+        <script>
+    function strToObj(str){
+    let obj={};
+    if(str.indexOf("@")==-1){
+        let st=str.split(",");
+        for(let i=0;i<st.length;i++){ 
+            obj[i]=st[i];    
+        }          
+    }else{
+        let st=str.split("@");
+        let arr=[];
+        for(let i=0;i<st.length;i++){ 
+            arr[i]=st[i].split(",");
+        }               
+        for(let i=0;i<arr.length;i++){ 
+            obj[i]=arr[i];    
+        }
+    }
+    return obj;
+    
+} 
+            /**
+             * 测试数据
+             * var sr1="2020-02-15 周六 20:15,2020-02-16 周日 20:15,2020-02-17 周一 20:15,2020-02-18 周二 20:15,2020-02-20 周四 20:15,2020-02-21 周五 20:15,2020-02-22 周六 20:15"
+    var sr2="HK$380,HK$580,HK$980,HK$980前十排,HK$980前五排,HK$980第一排@HK$380,HK$580,HK$980,HK$980前十排,HK$980前五排,HK$980第一排@HK$380,HK$580,HK$980,HK$980前十排,HK$980前五排,HK$980第一排@HK$380,HK$580,HK$980,HK$980前十排,HK$980前五排,HK$980第一排@HK$380,HK$580,HK$980,HK$980前十排,HK$980前五排,HK$980第一排@HK$380,HK$580,HK$980,HK$980前十排,HK$980前五排,HK$980第一排@HK$380,HK$580,HK$980,HK$980前十排,HK$980前五排,HK$980第一排"
+    var sr3="1,2,3,4,5,6@0,2,3,4,5,6@1,0,3,4,5,6@1,2,0,4,5,6@1,2,3,0,5,6@1,2,3,4,0,6"
+    var sr4="280,480,680,880,1080,2010"
+             */
+    var sr1="2020-02-15 周六 20:15,2020-02-16 周日 20:15,2020-02-17 周一 20:15,2020-02-18 周二 20:15,2020-02-20 周四 20:15,2020-02-21 周五 20:15,2020-02-22 周六 20:15"
+    var sr2="HK$380,HK$580,HK$980,HK$980前十排,HK$980前五排,HK$980第一排@HK$380,HK$580,HK$980,HK$980前十排,HK$980前五排,HK$980第一排@HK$380,HK$580,HK$980,HK$980前十排,HK$980前五排,HK$980第一排@HK$380,HK$580,HK$980,HK$980前十排,HK$980前五排,HK$980第一排@HK$380,HK$580,HK$980,HK$980前十排,HK$980前五排,HK$980第一排@HK$380,HK$580,HK$980,HK$980前十排,HK$980前五排,HK$980第一排@HK$380,HK$580,HK$980,HK$980前十排,HK$980前五排,HK$980第一排"
+    var sr3="1,2,3,4,5,6@0,2,3,4,5,6@1,0,3,4,5,6@1,2,0,4,5,6@1,2,3,0,5,6@1,2,3,4,0,6"
+    var sr4="280,480,680,880,1080,2010"
+    for(var i in strToObj(sr1)){
+        console.log(strToObj(sr2)[i])
+        console.log(strToObj(sr3)[i])
+        for(var j in strToObj(sr2)[i]){
+        console.log(strToObj(sr2)[i][j])
+        console.log(strToObj(sr3)[i][j])
+        }
+        
+    }
+            var provinces = new Array("安徽省","浙江省");
+            
+            var citys = [["合肥市","芜湖市","马鞍山","黄山市"],["杭州市","温州","台州"]]
+            
+            var areas = [[["包河区","瑶海区","蜀山区"],["镜湖区","弋江区"],["花山区","雨山区","当涂县"],["屯溪区","黄山区"]],
+                            [["上城区","下城区","西湖区","临安"],["鹿城区","瓯海区","龙湾区"],["仙居","三门","天台"]]]
+            
+            
+            //填充省列表
+            for(var i=0;i<provinces.length;i++){
+                $("#province").append("<option value='"+i+"'>"+provinces[i]+"</option>")
+            }
+            
+            //填充市列表
+            for(var i=0;i<citys[$("#province option:selected").val()].length;i++){
+                $("#city").append("<option value='"+i+"'>"+citys[$("#province option:selected").val()][i]+"</option>")
+            }
+            
+            //填充区列表
+            for(var i=0;i<areas[$("#province option:selected").val()][$("#city option:selected").val()].length;i++){
+                $("#area").append("<option value='"+i+"'>"+areas[$("#province option:selected").val()][$("#city option:selected").val()][i]+"</option>")
+            }
+            
+            //省份选项被改动时
+            $("#province").change(function(){
+                $("#city").empty();//清空市列表
+                //填充市列表
+                for(var i=0;i<citys[$("#province option:selected").val()].length;i++){
+                    $("#city").append("<option value='"+i+"'>"+citys[$("#province option:selected").val()][i]+"</option>")
+                }
+                $("#area").empty();
+                //填充区列表
+                for(var i=0;i<areas[$("#province option:selected").val()][$("#city option:selected").val()].length;i++){
+                    $("#area").append("<option value='"+i+"'>"+areas[$("#province option:selected").val()][$("#city option:selected").val()][i]+"</option>")
+                }
+            })
+            
+            //市选项被改动时
+            $("#city").change(function(){
+                $("#area").empty();
+                for(var i=0;i<areas[$("#province option:selected").val()][$("#city option:selected").val()].length;i++){
+                    $("#area").append("<option value='"+i+"'>"+areas[$("#province option:selected").val()][$("#city option:selected").val()][i]+"</option>")
+                }
+            })
+            
+            //获得所选择的地址
+            $("#confirmBtn").click(function(){
+                alert($("#province option:selected").text() +"/" + $("#city option:selected").text() +"/"+ $("#area option:selected").text())
+            })
+        </script>
+        
+    </body>
+</html>
